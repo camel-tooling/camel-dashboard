@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camel Openshift Console Plugin - Camel Dashboard Operator</title>
+    <meta name="description" content="Camel Dashboard operator is a management tool that will help you quickly monitoring the health of any Camel workload running on Kubernetes.">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="//localhost:1313/">Camel Dashboard Operator</a></h1>
+            <ul>
+                
+                <li><a href="/installation/">Installation</a></li>
+                
+                <li><a href="/configuration/">Configuration</a></li>
+                
+                <li><a href="/plugins/">Plugins</a></li>
+                
+                <li><a href="/about/">About</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        
+<article>
+    <h1>Camel Openshift Console Plugin</h1>
+    <p>This operator can work standalone and you can use the data exposed in the <code>CamelApp</code> custom resource accordingly. However it has a great fit with the <a href="https://github.com/camel-tooling/camel-openshift-console-plugin?tab=readme-ov-file#deployment-to-openshift">Camel Openshift Console Plugin</a>, which is a visual representation of the services exposed by the operator.</p>
+<h2 id="camel-openshift-console-plugin-dependencies-matrix">Camel Openshift Console Plugin dependencies matrix</h2>
+<p>The Camel Openshift Console Plugin is an extension of OpenShift Console exposing the data from the Camel Dashboard Operator.</p>
+<p>Below you can find the compatibility list for its dependencies:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Camel Openshift Console Plugin</th>
+          <th>Openshift</th>
+          <th>Camel Dashboard Operator</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>next (0.2.1)</td>
+          <td>Openshift 4.19</td>
+          <td>0.1.0</td>
+      </tr>
+      <tr>
+          <td>0.2.0</td>
+          <td>Openshift 4.19</td>
+          <td>0.1.0</td>
+      </tr>
+      <tr>
+          <td>0.1.0</td>
+          <td>Openshift 4.18</td>
+          <td>0.0.1</td>
+      </tr>
+  </tbody>
+</table>
+<p>NOTE: the old version 0.1.0 uses the old <code>App</code> custom resource.</p>
+<h2 id="installation">Installation</h2>
+<p>A <a href="https://helm.sh">Helm</a> chart is available to deploy the plugin to an OpenShift environment.</p>
+<p>The following Helm parameters are required:</p>
+<p><code>plugin.image:</code> The location of the image containing the plugin that was previously pushed</p>
+<p>Additional parameters can be specified if desired. Consult the chart values file for the full set of supported parameters.</p>
+<h3 id="installing-the-helm-chart">Installing the Helm Chart</h3>
+<p>Install the chart using the name of the plugin as the Helm release name into a new namespace or an existing namespace as specified by the camel-openshift-console-plugin parameter and providing the location of the image within the <code>plugin.image</code> parameter by using the following command:</p>
+<pre tabindex="0"><code>helm upgrade -i camel-openshift-console-plugin https://github.com/camel-tooling/camel-openshift-console-plugin/raw/refs/heads/main/docs/charts/camel-openshift-console-plugin-0.2.0.tgz --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-openshift-console-plugin:0.2.0
+</code></pre><p>NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, <code>0.2.0</code>) from the previous script accordingly.</p>
+
+</article>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Camel Dashboard Operator</p>
+    </footer>
+</body>
+</html>

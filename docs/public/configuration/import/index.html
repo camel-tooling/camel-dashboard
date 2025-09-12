@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import a Camel application - Camel Dashboard Operator</title>
+    <meta name="description" content="Camel Dashboard operator is a management tool that will help you quickly monitoring the health of any Camel workload running on Kubernetes.">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="//localhost:1313/">Camel Dashboard Operator</a></h1>
+            <ul>
+                
+                <li><a href="/installation/">Installation</a></li>
+                
+                <li><a href="/configuration/">Configuration</a></li>
+                
+                <li><a href="/plugins/">Plugins</a></li>
+                
+                <li><a href="/about/">About</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        
+<article>
+    <h1>Import a Camel application</h1>
+    <p>The operator is instructed to watch <code>Deployment</code> and verify if they are marked as Camel application. You will likely need to update your deployment process and include automatically a <code>camel.apache.org/app</code> label for all the applications you want to monitor.</p>
+<p>NOTE: you can configure the operator to watch for a different label setting the environment variable <code>LABEL_SELECTOR</code> in the operator Pod.</p>
+<h2 id="collect-camel-metrics">Collect Camel metrics</h2>
+<p>The operator is designed to consume the services exposed by <a href="https://camel.apache.org/components/next/others/observability-services.html">Camel Observability Services component</a>.</p>
+<p>It will works also when no services are exposed, but it won&rsquo;t be able to collect any meaningful metrics (likely only the status and the number of replicas).</p>
+<h2 id="run-a-new-camel-application">Run a new Camel application</h2>
+<p>Let&rsquo;s run some sample Camel application. We have prepared a few available to run some quick demo:</p>
+<ul>
+<li>A Camel main application available at <code>docker.io/squakez/db-app-main:1.0</code></li>
+<li>A Camel Quarkus application available at <code>docker.io/squakez/db-app-quarkus:1.0</code></li>
+<li>A Camel Spring Boot application available at <code>docker.io/squakez/db-app-sb:1.0</code></li>
+</ul>
+<p>These applications were created, exported and &ldquo;containerized&rdquo; via Camel JBang, which includes by default the aforementioned <code>camel-observability-services</code> dependency.</p>
+<p>Let&rsquo;s run them in a Kubernetes cluster (it also works in a local cluster such as <code>Minikube</code>):</p>
+<pre tabindex="0"><code>kubectl create deployment camel-app-main --image=docker.io/squakez/db-app-main:1.0
+</code></pre><p>The application should start, but, since there is no label for the operator, this one cannot discover it.</p>
+<p>NOTE: ideally your pipeline process should be the one in charge to include this and any other label to the applications.</p>
+<p>Let&rsquo;s include the label via CLI:</p>
+<pre tabindex="0"><code>kubectl label deployment camel-app-main camel.apache.org/app=camel-app-main
+</code></pre><p>NOTE: you can test it straight away with any of your existing Camel application by adding the label as well.</p>
+<p>The application is immediately imported by the operator. Its metrics are also scraped and available to be monitored:</p>
+<pre tabindex="0"><code>kubectl get camelapps
+NAME                PHASE     LAST EXCHANGE   EXCHANGE SLI   IMAGE                                  REPLICAS   INFO
+camel-app-413       Running   8m32s           OK             squakez/cdb:4.13                       1          Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT)
+</code></pre><p>NOTE: more information are available inspecting the custom resource (i.e. via <code>-o yaml</code>).</p>
+<h2 id="camel-annotations-synchronization">Camel annotations synchronization</h2>
+<p>As you will discover in the configuraton chapter, you can provide specific configuration for each <code>CamelApp</code>. In order to keep the operator in synch with any deployment tool, you should therefore annotate the backing deployment object (ie, the <code>Deployment</code>) with such specific configuration. The operator will automatically synchronize any annotation prefixed with <code>camel.apache.org</code>.</p>
+
+</article>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Camel Dashboard Operator</p>
+    </footer>
+</body>
+</html>

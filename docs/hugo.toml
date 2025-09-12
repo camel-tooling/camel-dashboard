@@ -1,0 +1,32 @@
+baseURL = ""
+languageCode = "en-us"
+title = "Camel Dashboard Operator"
+
+[params]
+  description = "Camel Dashboard operator is a management tool that will help you quickly monitoring the health of any Camel workload running on Kubernetes."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Installation"
+    url = "/installation/"
+    weight = 10
+  
+  [[menu.main]]
+    name = "Configuration"
+    url = "/configuration/"
+    weight = 20
+    
+  [[menu.main]]
+    name = "Plugins"
+    url = "/plugins/"
+    weight = 30
+    
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 40

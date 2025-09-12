@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to install the operator - Camel Dashboard Operator</title>
+    <meta name="description" content="Camel Dashboard operator is a management tool that will help you quickly monitoring the health of any Camel workload running on Kubernetes.">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="//localhost:1313/">Camel Dashboard Operator</a></h1>
+            <ul>
+                
+                <li><a href="/installation/">Installation</a></li>
+                
+                <li><a href="/configuration/">Configuration</a></li>
+                
+                <li><a href="/plugins/">Plugins</a></li>
+                
+                <li><a href="/about/">About</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        
+<article>
+    <h1>How to install the operator</h1>
+    <p>You can use <a href="https://helm.sh">Helm</a> to install the operator resources. You can install it in any namespace (we conventionally use <code>camel-dashboard</code> namespace, which, has to be created previously). The default configuration is for a cluster scoped operator (use <code>--set operator.global=&quot;false&quot;</code> for a namespace scoped operator).</p>
+<pre tabindex="0"><code>helm install camel-dashboard https://github.com/camel-tooling/camel-dashboard-operator/raw/refs/heads/main/docs/charts/camel-dashboard-0.0.1.tgz -n camel-dashboard
+</code></pre><p>NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.0.1) from the previous script accordingly.</p>
+<p>You can check if the operator is running:</p>
+<pre tabindex="0"><code>kubectl get pods -n camel-dashboard
+NAME                                        READY   STATUS    RESTARTS   AGE
+camel-dashboard-operator-7c6bcf5576-fwn7s   1/1     Running   0          4m18s
+</code></pre>
+    
+    
+</article>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Camel Dashboard Operator</p>
+    </footer>
+</body>
+</html>
