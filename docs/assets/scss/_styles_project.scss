@@ -1,0 +1,239 @@
+/* Custom Camel-themed styles for Docsy */
+
+/* Navbar customization */
+.td-navbar {
+  background-color: white !important;
+  border-bottom: 1px solid $border-color;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.td-navbar .navbar-brand {
+  color: $camel-orange !important;
+  font-weight: bold;
+}
+
+.td-navbar .navbar-nav .nav-link {
+  color: $camel-orange !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  
+  &:hover, &:focus {
+    color: $camel-orange-dark !important;
+  }
+}
+
+/* Sidebar navigation */
+.td-sidebar-nav {
+  .td-sidebar-link {
+    color: $body-color;
+    
+    &:hover {
+      color: $camel-blue-light;
+      background-color: rgba($camel-orange, 0.1);
+    }
+    
+    &.tree-root {
+      color: $camel-blue;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* Main content headings */
+.td-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: $camel-blue !important;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  a {
+    color: $camel-blue-light;
+    
+    &:hover {
+      color: $camel-blue-dark;
+    }
+  }
+}
+
+/* Hero section customization */
+.td-cover-block {
+  background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
+  
+  h1 {
+    color: $camel-blue !important;
+    text-transform: none;
+  }
+  
+  .lead {
+    color: $body-color;
+  }
+}
+
+/* Feature blocks */
+.td-box {
+  &--primary {
+    background-color: $camel-orange;
+    color: white;
+  }
+  
+  &--secondary {
+    background-color: $camel-blue;
+    color: white;
+  }
+  
+  &--dark {
+    background-color: #333;
+    color: white;
+    
+    // Feature section styling with orange headings
+    h4.h3 {
+      color: $camel-orange !important;
+    }
+    
+    .h1 i, .fas, .fab {
+      color: $camel-orange !important;
+    }
+    
+    &:hover {
+      h4.h3 {
+        color: lighten($camel-orange, 10%) !important;
+      }
+      
+      .h1 i, .fas, .fab {
+        color: lighten($camel-orange, 10%) !important;
+      }
+    }
+  }
+}
+
+
+/* Buttons */
+.btn-primary {
+  background-color: $camel-orange;
+  border-color: $camel-orange;
+  
+  &:hover, &:focus, &:active {
+    background-color: $camel-orange-dark;
+    border-color: $camel-orange-dark;
+  }
+}
+
+.btn-secondary {
+  background-color: $camel-blue;
+  border-color: $camel-blue;
+  color: white;
+  
+  &:hover, &:focus, &:active {
+    background-color: $camel-blue-dark;
+    border-color: $camel-blue-dark;
+    color: white;
+  }
+}
+
+/* Code blocks */
+.highlight pre, pre {
+  background-color: white;
+  border: 1px solid $border-color;
+  border-left: 4px solid $camel-orange;
+}
+
+code {
+  color: $camel-code-purple;
+  background-color: rgba($camel-orange, 0.1);
+}
+
+/* Table of contents */
+.td-toc {
+  a {
+    color: $body-color;
+    
+    &:hover {
+      color: $camel-blue-light;
+    }
+    
+    &.is-active {
+      color: $camel-orange;
+      border-left-color: $camel-orange;
+    }
+  }
+}
+
+/* Footer */
+.td-footer {
+  background-color: #333;
+  color: white;
+  
+  a {
+    color: #ccc;
+    
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+/* Alerts and admonitions */
+.alert {
+  &-primary {
+    background-color: rgba($camel-orange, 0.1);
+    border-color: $camel-orange;
+    color: $camel-orange-dark;
+  }
+  
+  &-info {
+    background-color: rgba($success, 0.1);
+    border-color: $success;
+    color: $camel-blue-dark;
+  }
+  
+  &-warning {
+    background-color: rgba($warning, 0.1);
+    border-color: $warning;
+    color: darken($warning, 15%);
+  }
+  
+  &-danger {
+    background-color: rgba($danger, 0.1);
+    border-color: $danger;
+    color: darken($danger, 15%);
+  }
+}
+
+/* Search */
+.td-search-input {
+  border-color: $border-color;
+  
+  &:focus {
+    border-color: $camel-orange;
+    box-shadow: 0 0 0 0.2rem rgba($camel-orange, 0.25);
+  }
+}
+
+/* Custom utility classes */
+.camel-highlight {
+  background-color: $camel-orange;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+.camel-feature-icon {
+  color: $camel-orange;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Page info boxes */
+.pageinfo {
+  background-color: rgba($camel-blue, 0.1);
+  border-left: 4px solid $camel-blue;
+  padding: 1rem;
+  margin: 1rem 0;
+  
+  &-primary {
+    background-color: rgba($camel-orange, 0.1);
+    border-left-color: $camel-orange;
+  }
+}
