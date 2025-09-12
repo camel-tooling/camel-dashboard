@@ -2,31 +2,65 @@ baseURL = ""
 languageCode = "en-us"
 title = "Camel Dashboard Operator"
 
+# Hugo modules configuration
+[module]
+  [[module.imports]]
+    path = "github.com/google/docsy"
+    disable = false
+  [[module.imports]]
+    path = "github.com/google/docsy/dependencies"
+    disable = false
+
+# Docsy theme configuration
 [params]
-  description = "Camel Dashboard operator is a management tool that will help you quickly monitoring the health of any Camel workload running on Kubernetes."
+  github_repo = "https://github.com/camel-tooling/camel-dashboard"
+  github_branch = "main"
+  edit_page = true
+  search_enabled = true
+  
+  # Project information
+  copyright = "Apache Software Foundation"
+  privacy_policy = ""
+  
+  # Menu and navigation
+  version_menu = "Releases"
+  archived_version = false
+  version = "main"
+  url_latest_version = ""
+  
+  # UI configuration
+  [params.ui]
+    sidebar_menu_compact = false
+    sidebar_search_disable = false
+    breadcrumb_disable = false
+    taxonomy_breadcrumb_disable = false
+    navbar_logo = true
+    footer_about_enable = true
+    
+  # Links for header and footer
+  [[params.links.user]]
+    name = "GitHub"
+    url = "https://github.com/camel-tooling/camel-dashboard"
+    icon = "fab fa-github"
+    desc = "GitHub repository"
+    
+  [[params.links.developer]]
+    name = "GitHub"
+    url = "https://github.com/camel-tooling/camel-dashboard"
+    icon = "fab fa-github"
+    desc = "Development on GitHub"
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = true
 
+# Menu configuration for Docsy
 [menu]
   [[menu.main]]
-    name = "Installation"
-    url = "/installation/"
+    name = "Documentation"
+    url = "/docs/"
     weight = 10
-  
-  [[menu.main]]
-    name = "Configuration"
-    url = "/configuration/"
-    weight = 20
-    
-  [[menu.main]]
-    name = "Plugins"
-    url = "/plugins/"
-    weight = 30
-    
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 40

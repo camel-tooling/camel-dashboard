@@ -2,21 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/plugins/hawtio/</loc>
+    <loc>//localhost:1313/docs/plugins/hawtio/</loc>
   </url><url>
-    <loc>//localhost:1313/installation/</loc>
+    <loc>//localhost:1313/docs/installation/</loc>
   </url><url>
-    <loc>//localhost:1313/configuration/import/</loc>
+    <loc>//localhost:1313/docs/configuration/import/</loc>
   </url><url>
-    <loc>//localhost:1313/plugins/oc-console/</loc>
+    <loc>//localhost:1313/docs/plugins/oc-console/</loc>
   </url><url>
-    <loc>//localhost:1313/configuration/</loc>
+    <loc>//localhost:1313/docs/configuration/</loc>
   </url><url>
-    <loc>//localhost:1313/configuration/tuning/</loc>
+    <loc>//localhost:1313/docs/configuration/tuning/</loc>
   </url><url>
-    <loc>//localhost:1313/plugins/</loc>
+    <loc>//localhost:1313/docs/</loc>
   </url><url>
-    <loc>//localhost:1313/about/</loc>
+    <loc>//localhost:1313/docs/plugins/</loc>
+  </url><url>
+    <loc>//localhost:1313/docs/about/</loc>
   </url><url>
     <loc>//localhost:1313/</loc>
   </url><url>

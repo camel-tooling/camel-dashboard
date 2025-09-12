@@ -1,0 +1,15 @@
+{
+  "name": "camel-dashboard-docs",
+  "version": "1.0.0",
+  "description": "Documentation for Camel Dashboard Operator",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo",
+    "serve": "hugo server"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0"
+  }
+}
