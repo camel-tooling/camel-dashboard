@@ -21,11 +21,12 @@ title = "Camel Dashboard Operator"
   # Custom CSS for Camel branding (Docsy style)
   [params.links]
   [[params.links.user]]
-    name = "GitHub"
+    name = "GitHub Camel Dashboard"
     url = "https://github.com/camel-tooling/camel-dashboard"
     icon = "fab fa-github"
     desc = "GitHub repository"
   
+    
   # Project information
   copyright = "Apache Software Foundation"
   privacy_policy = ""
@@ -46,17 +47,20 @@ title = "Camel Dashboard Operator"
     footer_about_enable = true
     
   # Links for header and footer
-  [[params.links.user]]
-    name = "GitHub"
-    url = "https://github.com/camel-tooling/camel-dashboard"
-    icon = "fab fa-github"
-    desc = "GitHub repository"
     
   [[params.links.developer]]
-    name = "GitHub"
-    url = "https://github.com/camel-tooling/camel-dashboard"
+    name = "GitHub Camel Dashboard Operator"
+    url = "https://github.com/camel-tooling/camel-dashboard-operator"
     icon = "fab fa-github"
-    desc = "Development on GitHub"
+    desc = "GitHub repository for Camel Dashboard Operator"
+
+  [[params.links.developer]]
+    name = "GitHub Camel Dashboard Plugin"
+    url = "https://github.com/camel-tooling/camel-openshift-console-plugin"
+    icon = "fab fa-github"
+    desc = "GitHub repository for Camel Dashboard Plugin"
+
+
 
 [markup]
   [markup.goldmark]
