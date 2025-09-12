@@ -1,17 +1,37 @@
 ---
 title: "Camel Dashboard Operator"
+linkTitle: "Camel Dashboard Operator"
 ---
 
-The **Camel Dashboard Operator** is a project created to simplify the management of any Camel application on a Kubernetes cluster. The tool is in charge to **monitor any Camel application** and provide a set of basic information, useful to learn how your fleet of Camel (a caravan!?) is behaving.
+{{< blocks/cover title="Camel Dashboard Operator" image_anchor="top" height="full" >}}
+<div class="mx-auto">
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
+		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+	</a>
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/camel-tooling/camel-dashboard">
+		Download <i class="fab fa-github ml-2 "></i>
+	</a>
+	<p class="lead mt-5">Monitor your Camel applications on Kubernetes</p>
+</div>
+{{< /blocks/cover >}}
 
-The project is designed to be as simple and low resource consumption as possible. It only collects the most important Camel application KPI in order to quickly identify what's going on across your Camel applications.
+{{% blocks/lead color="primary" %}}
+The **Camel Dashboard Operator** is a project created to simplify the management of any Camel application on a Kubernetes cluster. 
 
-NOTE: as the project is still in an experimental phase, the metrics collected can be changed at each development iteration.
+The tool is in charge to **monitor any Camel application** and provide a set of basic information, useful to learn how your fleet of Camel (a caravan!?) is behaving.
+{{% /blocks/lead %}}
 
-## The Camel custom resource
+{{< blocks/section color="dark" type="row" >}}
+{{% blocks/feature icon="fa-lightbulb" title="Simple & Lightweight" %}}
+Designed to be as simple and low resource consumption as possible. It only collects the most important Camel application KPI.
+{{% /blocks/feature %}}
 
-The operator uses a simple custom resource known as `CamelApp` or `capp` which stores certain metrics around your running applications. The operator detects the Camel applications you're deploying to the cluster, identifying them in a given namespace or a given metadata label that need to be included when deploying your applications (all configurable on the operator side).
+{{% blocks/feature icon="fa-chart-line" title="Real-time Monitoring" %}}
+Monitor your Camel applications in real-time with custom resources and metrics collection.
+{{% /blocks/feature %}}
 
-## How to see the dashboard
+{{% blocks/feature icon="fab fa-github" title="Open Source" %}}
+Developed under Apache license as a spin-off of Camel K project.
+{{% /blocks/feature %}}
 
-As the operator knows about `CamelApp` custom resource, you can use any Kubernetes tool (`kubectl`, `oc`) to visualize it. In order to render the resources graphically we are also developing an [Openshift plugin](https://github.com/camel-tooling/camel-openshift-console-plugin) which can be installed separately.
+{{< /blocks/section >}}

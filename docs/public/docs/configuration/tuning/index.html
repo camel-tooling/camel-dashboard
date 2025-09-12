@@ -3,7 +3,6 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="//localhost:1313/categories/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -18,20 +17,30 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Categories | Camel Dashboard Operator</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="//localhost:1313/categories/">
+<title>Configure Camel application | Camel Dashboard Operator</title>
+<meta name="description" content="There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
+Configure the metrics polling You can watch the metrics evolving as long as the application is running, for example via -w parameter:
+kubectl get camelapps -w NAME PHASE LAST EXCHANGE EXCHANGE SLI IMAGE REPLICAS INFO ... camel-app-413 Running 8m32s OK squakez/cdb:4.13 1 Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT) camel-app-main Running OK docker.io/squakez/db-app-main:1.0 1 Main - 4.11.0 (4.11.0) camel-app-quarkus Running Warning docker.io/squakez/db-app-quarkus:1.0 1 camel-app-sb Running Error docker.io/squakez/db-app-sb:1.0 1 Spring-Boot - 3.4.3 (4.11.0) The CamelApp are polled every minute by default. It should be enough in most cases, as the project is really a dashboard and not a proper monitoring tool. However, you can change this configuration if you want a more or less reactive polling. You can configure this value both at operator level (which would affect all the applications) or at single application level.">
+<meta property="og:url" content="//localhost:1313/docs/configuration/tuning/">
   <meta property="og:site_name" content="Camel Dashboard Operator">
-  <meta property="og:title" content="Categories">
-  <meta property="og:description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta property="og:title" content="Configure Camel application">
+  <meta property="og:description" content="There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
+Configure the metrics polling You can watch the metrics evolving as long as the application is running, for example via -w parameter:
+kubectl get camelapps -w NAME PHASE LAST EXCHANGE EXCHANGE SLI IMAGE REPLICAS INFO ... camel-app-413 Running 8m32s OK squakez/cdb:4.13 1 Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT) camel-app-main Running OK docker.io/squakez/db-app-main:1.0 1 Main - 4.11.0 (4.11.0) camel-app-quarkus Running Warning docker.io/squakez/db-app-quarkus:1.0 1 camel-app-sb Running Error docker.io/squakez/db-app-sb:1.0 1 Spring-Boot - 3.4.3 (4.11.0) The CamelApp are polled every minute by default. It should be enough in most cases, as the project is really a dashboard and not a proper monitoring tool. However, you can change this configuration if you want a more or less reactive polling. You can configure this value both at operator level (which would affect all the applications) or at single application level.">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
 
-  <meta itemprop="name" content="Categories">
-  <meta itemprop="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta itemprop="name" content="Configure Camel application">
+  <meta itemprop="description" content="There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
+Configure the metrics polling You can watch the metrics evolving as long as the application is running, for example via -w parameter:
+kubectl get camelapps -w NAME PHASE LAST EXCHANGE EXCHANGE SLI IMAGE REPLICAS INFO ... camel-app-413 Running 8m32s OK squakez/cdb:4.13 1 Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT) camel-app-main Running OK docker.io/squakez/db-app-main:1.0 1 Main - 4.11.0 (4.11.0) camel-app-quarkus Running Warning docker.io/squakez/db-app-quarkus:1.0 1 camel-app-sb Running Error docker.io/squakez/db-app-sb:1.0 1 Spring-Boot - 3.4.3 (4.11.0) The CamelApp are polled every minute by default. It should be enough in most cases, as the project is really a dashboard and not a proper monitoring tool. However, you can change this configuration if you want a more or less reactive polling. You can configure this value both at operator level (which would affect all the applications) or at single application level.">
+  <meta itemprop="wordCount" content="499">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Categories">
-  <meta name="twitter:description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta name="twitter:title" content="Configure Camel application">
+  <meta name="twitter:description" content="There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
+Configure the metrics polling You can watch the metrics evolving as long as the application is running, for example via -w parameter:
+kubectl get camelapps -w NAME PHASE LAST EXCHANGE EXCHANGE SLI IMAGE REPLICAS INFO ... camel-app-413 Running 8m32s OK squakez/cdb:4.13 1 Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT) camel-app-main Running OK docker.io/squakez/db-app-main:1.0 1 Main - 4.11.0 (4.11.0) camel-app-quarkus Running Warning docker.io/squakez/db-app-quarkus:1.0 1 camel-app-sb Running Error docker.io/squakez/db-app-sb:1.0 1 Spring-Boot - 3.4.3 (4.11.0) The CamelApp are polled every minute by default. It should be enough in most cases, as the project is really a dashboard and not a proper monitoring tool. However, you can change this configuration if you want a more or less reactive polling. You can configure this value both at operator level (which would affect all the applications) or at single application level.">
 
 
 
@@ -45,7 +54,7 @@
   crossorigin="anonymous"></script>
 
   </head>
-  <body class="td-taxonomy">
+  <body class="td-page">
     <header>
       <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
 <div class="container-fluid flex-column flex-md-row">
@@ -63,14 +72,147 @@
 </div>
 </nav>
     </header>
-    <div class="container-fluid td-default td-outer">
-      <main role="main" class="td-main">
-        <div class="td-content">
-  <main class="taxonomy-terms-page">
-    <h1>Categories</h1>
-    </main>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsinstallation-li">
+  <a href="/docs/installation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsinstallation"><span class="">How to install the operator</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsconfiguration-li">
+  <a href="/docs/configuration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsconfiguration"><span class="">Configuration</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsconfigurationimport-li">
+  <a href="/docs/configuration/import/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsconfigurationimport"><span class="">Import a Camel application</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsconfigurationtuning-li">
+  <a href="/docs/configuration/tuning/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docsconfigurationtuning"><span class="td-sidebar-nav-active-item">Configure Camel application</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsplugins-li">
+  <a href="/docs/plugins/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsplugins"><span class="">Plugins</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docspluginshawtio-li">
+  <a href="/docs/plugins/hawtio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docspluginshawtio"><span class="">Hawt.io Openshift Console Plugin</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docspluginsoc-console-li">
+  <a href="/docs/plugins/oc-console/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docspluginsoc-console"><span class="">Camel Openshift Console Plugin</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsabout-li">
+  <a href="/docs/about/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsabout"><span class="">About</span></a>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
 </div>
-      </main>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/camel-tooling/camel-dashboard/tree/main/content/docs/configuration/tuning.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/camel-tooling/camel-dashboard/edit/main/content/docs/configuration/tuning.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/camel-tooling/camel-dashboard/new/main/content/docs/configuration?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+  <a href="https://github.com/camel-tooling/camel-dashboard/issues/new?title=Configure%20Camel%20application" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+  
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#configure-the-metrics-polling">Configure the metrics polling</a>
+      <ul>
+        <li><a href="#operator-level">Operator level</a></li>
+        <li><a href="#application-level">Application level</a></li>
+      </ul>
+    </li>
+    <li><a href="#configure-the-sli-exchange-error-and-warning-percentage">Configure the SLI Exchange error and warning percentage</a>
+      <ul>
+        <li><a href="#operator-level-1">Operator level</a></li>
+        <li><a href="#application-level-1">Application level</a></li>
+      </ul>
+    </li>
+    <li><a href="#configure-the-observability-services-port">Configure the observability services port</a>
+      <ul>
+        <li><a href="#operator-level-2">Operator level</a></li>
+        <li><a href="#application-level-2">Application level</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/docs/">Documentation</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/configuration/">Configuration</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Configure Camel application</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Configure Camel application</h1>
+	
+	<header class="article-meta">
+		
+</header>
+	<p>There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).</p>
+<h2 id="configure-the-metrics-polling">Configure the metrics polling</h2>
+<p>You can watch the metrics evolving as long as the application is running, for example via <code>-w</code> parameter:</p>
+<pre tabindex="0"><code>kubectl get camelapps -w
+
+NAME                PHASE     LAST EXCHANGE   EXCHANGE SLI   IMAGE                                  REPLICAS   INFO
+...
+camel-app-413       Running   8m32s           OK             squakez/cdb:4.13                       1          Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT)
+camel-app-main      Running                   OK             docker.io/squakez/db-app-main:1.0      1          Main - 4.11.0 (4.11.0)
+camel-app-quarkus   Running                   Warning        docker.io/squakez/db-app-quarkus:1.0   1
+camel-app-sb        Running                   Error          docker.io/squakez/db-app-sb:1.0        1          Spring-Boot - 3.4.3 (4.11.0)
+</code></pre><p>The <code>CamelApp</code> are polled every minute by default. It should be enough in most cases, as the project is really a dashboard and not a proper monitoring tool. However, you can change this configuration if you want a more or less reactive polling. You can configure this value both at operator level (which would affect all the applications) or at single application level.</p>
+<h3 id="operator-level">Operator level</h3>
+<p>You can setup the environment variables <code>POLL_INTERVAL_SECONDS</code> with the number of seconds between each metrics polling.</p>
+<p>NOTE: this will affect all your applications. Setting it a low value can reduce the performances of both the operator and the same Camel applications which will need to use compute resources to read from the HTTP service.</p>
+<h3 id="application-level">Application level</h3>
+<p>You can add an annotation to the <code>Deployment</code> resource, <code>camel.apache.org/polling-interval-seconds</code> with the value you want.</p>
+<p>NOTE: although this configuration will only affect the single application, consider the right balance to avoid affecting the application performances.</p>
+<h2 id="configure-the-sli-exchange-error-and-warning-percentage">Configure the SLI Exchange error and warning percentage</h2>
+<p>The operator is in charge to automatically calculate the success rate percentage of exchanges in the last polling interval time. It has some default configuration and will return a <code>Success</code>, <code>Warning</code> or <code>Error</code> status if it detects that the failure of exchanges during the interval exceeds the thresholds. It returns an <code>Error</code> when the failure exceed the 5% of exchanges failed, <code>Warning</code> if the failure is above 10%, <code>Success</code>. However, these values can be configured.</p>
+<h3 id="operator-level-1">Operator level</h3>
+<p>You can setup the environment variables <code>SLI_ERR_PERCENTAGE</code> and <code>SLI_WARN_PERCENTAGE</code>. It requires an <code>int</code> value.</p>
+<h3 id="application-level-1">Application level</h3>
+<p>You can add an annotation to the <code>Deployment</code> resource, <code>camel.apache.org/sli-exchange-error-percentage</code> and <code>camel.apache.org/sli-exchange-warning-percentage</code> with the value expected for that specific application only.</p>
+<h2 id="configure-the-observability-services-port">Configure the observability services port</h2>
+<p>The operator is able to discover applications thanks to the presence of the <code>camel-observability-services</code> component. By default this component exposes the metrics on port <code>9876</code> (which is also the operator default if you don&rsquo;t configure it). However this value can be changed by the user to any other port (including the regular business service port). You can configure is both at Operator or Application level.</p>
+<h3 id="operator-level-2">Operator level</h3>
+<p>You can setup the environment variables <code>OBSERVABILITY_PORT</code> with the number of the port where the operator has to get the metrics.</p>
+<h3 id="application-level-2">Application level</h3>
+<p>You can add an annotation to the <code>Deployment</code> resource, <code>camel.apache.org/observability-services-port</code> with the value expected for that specific application only.</p>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
       <footer class="td-footer row d-print-none">
   <div class="container-fluid">
     <div class="row mx-md-2">

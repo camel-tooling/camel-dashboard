@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Camel Dashboard Operator</title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on Camel Dashboard Operator</description>
+    <title>Configuration on Camel Dashboard Operator</title>
+    <link>//localhost:1313/docs/configuration/</link>
+    <description>Recent content in Configuration on Camel Dashboard Operator</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hawt.io Openshift Console Plugin</title>
-      <link>//localhost:1313/docs/plugins/hawtio/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/plugins/hawtio/</guid>
-      <description></description>
-    </item>
+    <atom:link href="//localhost:1313/docs/configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Import a Camel application</title>
       <link>//localhost:1313/docs/configuration/import/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/docs/configuration/import/</guid>
       <description>&lt;p&gt;The operator is instructed to watch &lt;code&gt;Deployment&lt;/code&gt; and verify if they are marked as Camel application. You will likely need to update your deployment process and include automatically a &lt;code&gt;camel.apache.org/app&lt;/code&gt; label for all the applications you want to monitor.&lt;/p&gt;&#xA;&lt;p&gt;NOTE: you can configure the operator to watch for a different label setting the environment variable &lt;code&gt;LABEL_SELECTOR&lt;/code&gt; in the operator Pod.&lt;/p&gt;&#xA;&lt;h2 id=&#34;collect-camel-metrics&#34;&gt;Collect Camel metrics&lt;/h2&gt;&#xA;&lt;p&gt;The operator is designed to consume the services exposed by &lt;a href=&#34;https://camel.apache.org/components/next/others/observability-services.html&#34;&gt;Camel Observability Services component&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Camel Openshift Console Plugin</title>
-      <link>//localhost:1313/docs/plugins/oc-console/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/plugins/oc-console/</guid>
-      <description>&lt;p&gt;This operator can work standalone and you can use the data exposed in the &lt;code&gt;CamelApp&lt;/code&gt; custom resource accordingly. However it has a great fit with the &lt;a href=&#34;https://github.com/camel-tooling/camel-openshift-console-plugin?tab=readme-ov-file#deployment-to-openshift&#34;&gt;Camel Openshift Console Plugin&lt;/a&gt;, which is a visual representation of the services exposed by the operator.&lt;/p&gt;&#xA;&lt;h2 id=&#34;camel-openshift-console-plugin-dependencies-matrix&#34;&gt;Camel Openshift Console Plugin dependencies matrix&lt;/h2&gt;&#xA;&lt;p&gt;The Camel Openshift Console Plugin is an extension of OpenShift Console exposing the data from the Camel Dashboard Operator.&lt;/p&gt;&#xA;&lt;p&gt;Below you can find the compatibility list for its dependencies:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configure Camel application</title>
