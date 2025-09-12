@@ -15,7 +15,7 @@ linkTitle: "Camel Dashboard Operator"
 </div>
 {{< /blocks/cover >}}
 
-{{% blocks/lead color="primary" %}}
+{{% blocks/lead color="light" %}}
 The **Camel Dashboard Operator** is a project created to simplify the management of any Camel application on a Kubernetes cluster. 
 
 The tool is in charge to **monitor any Camel application** and provide a set of basic information, useful to learn how your fleet of Camel (a caravan!?) is behaving.
