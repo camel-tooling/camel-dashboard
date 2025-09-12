@@ -18,6 +18,14 @@ title = "Camel Dashboard Operator"
   edit_page = true
   search_enabled = true
   
+  # Custom CSS for Camel branding (Docsy style)
+  [params.links]
+  [[params.links.user]]
+    name = "GitHub"
+    url = "https://github.com/camel-tooling/camel-dashboard"
+    icon = "fab fa-github"
+    desc = "GitHub repository"
+  
   # Project information
   copyright = "Apache Software Foundation"
   privacy_policy = ""
