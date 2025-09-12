@@ -16,9 +16,14 @@
   color: $camel-orange !important;
   text-transform: uppercase;
   font-weight: 600;
+  text-shadow: none;
+  text-decoration: none;
   
   &:hover, &:focus {
     color: $camel-orange-dark !important;
+    text-shadow: none;
+    text-decoration: underline;
+    text-decoration-color: $camel-orange-dark;
   }
 }
 
