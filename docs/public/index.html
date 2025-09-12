@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.142.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camel Dashboard Operator</title>
+    <meta name="description" content="Camel Dashboard operator is a management tool that will help you quickly monitoring the health of any Camel workload running on Kubernetes.">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="//localhost:1313/">Camel Dashboard Operator</a></h1>
+            <ul>
+                
+                <li><a href="/installation/">Installation</a></li>
+                
+                <li><a href="/configuration/">Configuration</a></li>
+                
+                <li><a href="/plugins/">Plugins</a></li>
+                
+                <li><a href="/about/">About</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        
+<article>
+    <h1>Camel Dashboard Operator</h1>
+    <p>The <strong>Camel Dashboard Operator</strong> is a project created to simplify the management of any Camel application on a Kubernetes cluster. The tool is in charge to <strong>monitor any Camel application</strong> and provide a set of basic information, useful to learn how your fleet of Camel (a caravan!?) is behaving.</p>
+<p>The project is designed to be as simple and low resource consumption as possible. It only collects the most important Camel application KPI in order to quickly identify what&rsquo;s going on across your Camel applications.</p>
+<p>NOTE: as the project is still in an experimental phase, the metrics collected can be changed at each development iteration.</p>
+<h2 id="the-camel-custom-resource">The Camel custom resource</h2>
+<p>The operator uses a simple custom resource known as <code>CamelApp</code> or <code>capp</code> which stores certain metrics around your running applications. The operator detects the Camel applications you&rsquo;re deploying to the cluster, identifying them in a given namespace or a given metadata label that need to be included when deploying your applications (all configurable on the operator side).</p>
+<h2 id="how-to-see-the-dashboard">How to see the dashboard</h2>
+<p>As the operator knows about <code>CamelApp</code> custom resource, you can use any Kubernetes tool (<code>kubectl</code>, <code>oc</code>) to visualize it. In order to render the resources graphically we are also developing an <a href="https://github.com/camel-tooling/camel-openshift-console-plugin">Openshift plugin</a> which can be installed separately.</p>
+
+</article>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Camel Dashboard Operator</p>
+    </footer>
+</body>
+</html>
