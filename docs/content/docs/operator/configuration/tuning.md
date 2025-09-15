@@ -26,13 +26,13 @@ The `CamelApp` are polled every minute by default. It should be enough in most c
 
 You can setup the environment variables `POLL_INTERVAL_SECONDS` with the number of seconds between each metrics polling.
 
-NOTE: this will affect all your applications. Setting it a low value can reduce the performances of both the operator and the same Camel applications which will need to use compute resources to read from the HTTP service.
+> NOTE: this will affect all your applications. Setting it a low value can reduce the performances of both the operator and the same Camel applications which will need to use compute resources to read from the HTTP service.
 
 ### Application level
 
 You can add an annotation to the `Deployment` resource, `camel.apache.org/polling-interval-seconds` with the value you want.
 
-NOTE: although this configuration will only affect the single application, consider the right balance to avoid affecting the application performances.
+> NOTE: although this configuration will only affect the single application, consider the right balance to avoid affecting the application performances.
 
 ## Configure the SLI Exchange error and warning percentage
 

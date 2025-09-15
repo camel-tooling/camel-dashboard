@@ -3,7 +3,7 @@
   <head><script src="/camel-dashboard/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=camel-dashboard/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/camel-dashboard/docs/about/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/camel-dashboard/docs/operator/installation/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -18,21 +18,24 @@
 <link rel="icon" type="image/png" href="/camel-dashboard/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/camel-dashboard/favicons/android-192x192.png" sizes="192x192">
 
-<title>About | Camel Dashboard</title>
+<title>How to install the operator | Camel Dashboard</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="http://localhost:1313/camel-dashboard/docs/about/">
+<meta property="og:url" content="http://localhost:1313/camel-dashboard/docs/operator/installation/">
   <meta property="og:site_name" content="Camel Dashboard">
-  <meta property="og:title" content="About">
-  <meta property="og:description" content="Camel Dashboard project is developed under Apache license. The project has born as a spin off of Camel K, in order to bring to the user a simpler view of any Camel application running on a Kubernetes cluster.">
+  <meta property="og:title" content="How to install the operator">
+  <meta property="og:description" content="You can use Helm to install the operator resources. You can install it in any namespace (we conventionally use camel-dashboard namespace, which, has to be created previously). The default configuration is for a cluster scoped operator (use --set operator.global=&#34;false&#34; for a namespace scoped operator).
+helm install camel-dashboard https://github.com/camel-tooling/camel-dashboard-operator/raw/refs/heads/main/docs/charts/camel-dashboard-0.0.1.tgz -n camel-dashboard NOTE: The installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.0.1) from the previous script accordingly.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="About">
-  <meta itemprop="description" content="Camel Dashboard project is developed under Apache license. The project has born as a spin off of Camel K, in order to bring to the user a simpler view of any Camel application running on a Kubernetes cluster.">
-  <meta itemprop="wordCount" content="38">
+  <meta itemprop="name" content="How to install the operator">
+  <meta itemprop="description" content="You can use Helm to install the operator resources. You can install it in any namespace (we conventionally use camel-dashboard namespace, which, has to be created previously). The default configuration is for a cluster scoped operator (use --set operator.global=&#34;false&#34; for a namespace scoped operator).
+helm install camel-dashboard https://github.com/camel-tooling/camel-dashboard-operator/raw/refs/heads/main/docs/charts/camel-dashboard-0.0.1.tgz -n camel-dashboard NOTE: The installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.0.1) from the previous script accordingly.">
+  <meta itemprop="wordCount" content="97">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About">
-  <meta name="twitter:description" content="Camel Dashboard project is developed under Apache license. The project has born as a spin off of Camel K, in order to bring to the user a simpler view of any Camel application running on a Kubernetes cluster.">
+  <meta name="twitter:title" content="How to install the operator">
+  <meta name="twitter:description" content="You can use Helm to install the operator resources. You can install it in any namespace (we conventionally use camel-dashboard namespace, which, has to be created previously). The default configuration is for a cluster scoped operator (use --set operator.global=&#34;false&#34; for a namespace scoped operator).
+helm install camel-dashboard https://github.com/camel-tooling/camel-dashboard-operator/raw/refs/heads/main/docs/charts/camel-dashboard-0.0.1.tgz -n camel-dashboard NOTE: The installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.0.1) from the previous script accordingly.">
 
 
 
@@ -79,11 +82,11 @@
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-camel-dashboarddocs-li">
   <a href="/camel-dashboard/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-camel-dashboarddocs"><span class="">Camel Dashboard</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-camel-dashboarddocsoperator-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-camel-dashboarddocsoperator-li">
   <a href="/camel-dashboard/docs/operator/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsoperator"><span class="">Camel Dashboard Operator</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-camel-dashboarddocsoperatorinstallation-li">
-  <a href="/camel-dashboard/docs/operator/installation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsoperatorinstallation"><span class="">How to install the operator</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-camel-dashboarddocsoperatorinstallation-li">
+  <a href="/camel-dashboard/docs/operator/installation/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsoperatorinstallation"><span class="td-sidebar-nav-active-item">How to install the operator</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-camel-dashboarddocsoperatorconfiguration-li">
   <a href="/camel-dashboard/docs/operator/configuration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsoperatorconfiguration"><span class="">Configuration</span></a>
   <ul class="ul-3 foldable">
@@ -104,8 +107,8 @@
   <a href="/camel-dashboard/docs/plugins/oc-console/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-camel-dashboarddocspluginsoc-console"><span class="">Camel Openshift Console Plugin</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-camel-dashboarddocsabout-li">
-  <a href="/camel-dashboard/docs/about/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsabout"><span class="td-sidebar-nav-active-item">About</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-camel-dashboarddocsabout-li">
+  <a href="/camel-dashboard/docs/about/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsabout"><span class="">About</span></a>
 </li>
   </ul>
 </li>
@@ -116,10 +119,10 @@
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
             <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
-<a href="https://github.com/camel-tooling/camel-dashboard/tree/main/content/docs/about/_index.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
-  <a href="https://github.com/camel-tooling/camel-dashboard/edit/main/content/docs/about/_index.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
-  <a href="https://github.com/camel-tooling/camel-dashboard/new/main/content/docs/about?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
-  <a href="https://github.com/camel-tooling/camel-dashboard/issues/new?title=About" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/camel-tooling/camel-dashboard/tree/main/content/docs/operator/installation/_index.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/camel-tooling/camel-dashboard/edit/main/content/docs/operator/installation/_index.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/camel-tooling/camel-dashboard/new/main/content/docs/operator/installation?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+  <a href="https://github.com/camel-tooling/camel-dashboard/issues/new?title=How%20to%20install%20the%20operator" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
   
 </div>
 
@@ -135,19 +138,29 @@
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="/camel-dashboard/docs/">Camel Dashboard</a></li>
+  <li class="breadcrumb-item">
+    <a href="/camel-dashboard/docs/operator/">Camel Dashboard Operator</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    About</li>
+    How to install the operator</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>About</h1>
+	<h1>How to install the operator</h1>
   
 	<header class="article-meta">
 		
 </header>
-	<p>Camel Dashboard project is developed under Apache license. The project has born as a spin off of <a href="https://camel.apache.org/camel-k/">Camel K</a>, in order to bring to the user <strong>a simpler view of any Camel application</strong> running on a Kubernetes cluster.</p>
-
+	<p>You can use <a href="https://helm.sh">Helm</a> to install the operator resources. You can install it in any namespace (we conventionally use <code>camel-dashboard</code> namespace, which, has to be created previously). The default configuration is for a cluster scoped operator (use <code>--set operator.global=&quot;false&quot;</code> for a namespace scoped operator).</p>
+<pre tabindex="0"><code>helm install camel-dashboard https://github.com/camel-tooling/camel-dashboard-operator/raw/refs/heads/main/docs/charts/camel-dashboard-0.0.1.tgz -n camel-dashboard
+</code></pre><blockquote>
+<p>NOTE: The installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.0.1) from the previous script accordingly.</p>
+</blockquote>
+<p>You can check if the operator is running:</p>
+<pre tabindex="0"><code>kubectl get pods -n camel-dashboard
+NAME                                        READY   STATUS    RESTARTS   AGE
+camel-dashboard-operator-7c6bcf5576-fwn7s   1/1     Running   0          4m18s
+</code></pre>
   <div class="section-index">
     
     
