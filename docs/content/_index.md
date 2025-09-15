@@ -1,9 +1,9 @@
 ---
-title: "Camel Dashboard Operator"
-linkTitle: "Camel Dashboard Operator"
+title: "Camel Dashboard"
+linkTitle: "Camel Dashboard"
 ---
 
-{{< blocks/cover title="Camel Dashboard Operator" image_anchor="top" height="full" >}}
+{{< blocks/cover title="Camel Dashboard" image_anchor="top" height="full" >}}
 <div class="mx-auto">
 	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
 		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
@@ -11,14 +11,13 @@ linkTitle: "Camel Dashboard Operator"
 	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/camel-tooling/camel-dashboard">
 		Download <i class="fab fa-github ml-2 "></i>
 	</a>
-	<p class="lead mt-5">Monitor your Camel applications on Kubernetes</p>
-</div>
+	<p class="lead mt-5">Monitor your fleet of Camel applications on Kubernetes</p>
 {{< /blocks/cover >}}
 
 {{% blocks/lead color="light" %}}
-The **Camel Dashboard Operator** is a project created to simplify the management of any Camel application on a Kubernetes cluster. 
+The **Camel Dashboard** is a project created to simplify the management of any Camel application on a Kubernetes cluster. 
 
-The tool is in charge to **monitor any Camel application** and provide a set of basic information, useful to learn how your fleet of Camel (a caravan!?) is behaving.
+The tool is in charge to **monitor any Camel application** and provide a set of basic information, with a clear, visual overview, useful to learn how your fleet of Camel (a caravan!?) is behaving.
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark" type="row" >}}

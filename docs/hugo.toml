@@ -1,6 +1,6 @@
 baseURL = "https://camel-tooling.github.io/camel-dashboard/"
 languageCode = "en-us"
-title = "Camel Dashboard Operator"
+title = "Camel Dashboard"
 
 # Hugo modules configuration
 [module]

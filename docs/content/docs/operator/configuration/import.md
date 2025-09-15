@@ -31,7 +31,7 @@ kubectl create deployment camel-app-main --image=docker.io/squakez/db-app-main:1
 
 The application should start, but, since there is no label for the operator, this one cannot discover it.
 
-NOTE: ideally your pipeline process should be the one in charge to include this and any other label to the applications.
+> NOTE: ideally your pipeline process should be the one in charge to include this and any other label to the applications.
 
 Let's include the label via CLI:
 
@@ -39,7 +39,7 @@ Let's include the label via CLI:
 kubectl label deployment camel-app-main camel.apache.org/app=camel-app-main
 ```
 
-NOTE: you can test it straight away with any of your existing Camel application by adding the label as well.
+> NOTE: you can test it straight away with any of your existing Camel application by adding the label as well.
 
 The application is immediately imported by the operator. Its metrics are also scraped and available to be monitored:
 
@@ -49,7 +49,7 @@ NAME                PHASE     LAST EXCHANGE   EXCHANGE SLI   IMAGE              
 camel-app-413       Running   8m32s           OK             squakez/cdb:4.13                       1          Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT)
 ```
 
-NOTE: more information are available inspecting the custom resource (i.e. via `-o yaml`).
+> NOTE: more information are available inspecting the custom resource (i.e. via `-o yaml`).
 
 ## Camel annotations synchronization
 

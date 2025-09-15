@@ -9,7 +9,7 @@ You can use [Helm](https://helm.sh) to install the operator resources. You can i
 helm install camel-dashboard https://github.com/camel-tooling/camel-dashboard-operator/raw/refs/heads/main/docs/charts/camel-dashboard-0.0.1.tgz -n camel-dashboard
 ```
 
-NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.0.1) from the previous script accordingly.
+> NOTE: The installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.0.1) from the previous script accordingly.
 
 You can check if the operator is running:
 

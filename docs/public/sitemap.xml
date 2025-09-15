@@ -4,17 +4,19 @@
   <url>
     <loc>http://localhost:1313/camel-dashboard/docs/plugins/hawtio/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/installation/</loc>
+    <loc>http://localhost:1313/camel-dashboard/docs/operator/installation/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/configuration/import/</loc>
+    <loc>http://localhost:1313/camel-dashboard/docs/operator/configuration/import/</loc>
+  </url><url>
+    <loc>http://localhost:1313/camel-dashboard/docs/</loc>
+  </url><url>
+    <loc>http://localhost:1313/camel-dashboard/docs/operator/</loc>
   </url><url>
     <loc>http://localhost:1313/camel-dashboard/docs/plugins/oc-console/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/configuration/</loc>
+    <loc>http://localhost:1313/camel-dashboard/docs/operator/configuration/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/configuration/tuning/</loc>
-  </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/</loc>
+    <loc>http://localhost:1313/camel-dashboard/docs/operator/configuration/tuning/</loc>
   </url><url>
     <loc>http://localhost:1313/camel-dashboard/docs/plugins/</loc>
   </url><url>

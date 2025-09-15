@@ -1,7 +1,7 @@
 {
   "name": "camel-dashboard-docs",
   "version": "1.0.0",
-  "description": "Documentation for Camel Dashboard Operator",
+  "description": "Documentation for Camel Dashboard",
   "main": "index.js",
   "scripts": {
     "build": "hugo",

@@ -1,6 +1,6 @@
 # Camel Dashboard Documentation
 
-This directory contains the documentation website for the Camel Dashboard Operator, built with [Hugo](https://gohugo.io/) and the [Docsy](https://www.docsy.dev/) theme.
+This directory contains the documentation website for the Camel Dashboard, built with [Hugo](https://gohugo.io/) and the [Docsy](https://www.docsy.dev/) theme.
 
 ## Prerequisites
 
