@@ -1,40 +1,40 @@
 ---
-title: "Camel Openshift Console Plugin"
+title: "Camel Dashboard Console"
 weight: 20
 ---
 
-This operator can work standalone and you can use the data exposed in the `CamelApp` custom resource accordingly. However it has a great fit with the [Camel Openshift Console Plugin](https://github.com/camel-tooling/camel-openshift-console-plugin?tab=readme-ov-file#deployment-to-openshift), which is a visual representation of the services exposed by the operator.
+This operator can work standalone and you can use the data exposed in the `CamelApp` custom resource accordingly. However it has a great fit with the [Camel Dashboard Console](https://github.com/camel-tooling/camel-dashboard-console?tab=readme-ov-file#deployment-to-openshift), which is a visual representation of the services exposed by the operator.
 
-## Camel Openshift Console Plugin dependencies matrix
+## Camel Dashboard Console dependencies matrix
 
-The Camel Openshift Console Plugin is an extension of OpenShift Console exposing the data from the Camel Dashboard Operator.
+The Camel Dashboard Console is a plugin extension of OpenShift Console exposing the data from the Camel Dashboard Operator.
 
 Below you can find the compatibility list for its dependencies:
 
-| Camel Openshift Console Plugin | Openshift          | Camel Dashboard Operator |
-| ------------------------------ | ------------------ | ------------------------ |
-| next (0.2.1)                   | Openshift 4.19     | 0.1.0                    |
-| 0.2.0                          | Openshift 4.19     | 0.1.0                    |
-| 0.1.0                          | Openshift 4.18     | 0.0.1                    |
+| Camel Dashboard Console | Openshift          | Camel Dashboard Operator |
+| ----------------------- | ------------------ | ------------------------ |
+| next (0.2.1)            | Openshift 4.19     | 0.1.0                    |
+| 0.2.0                   | Openshift 4.19     | 0.1.0                    |
+| 0.1.0                   | Openshift 4.18     | 0.0.1                    |
 
 NOTE: the old version 0.1.0 uses the old `App` custom resource.
 
 ## Installation
 
-A [Helm](https://helm.sh) chart is available to deploy the plugin to an OpenShift environment.
+A [Helm](https://helm.sh) chart is available to deploy the console plugin to an OpenShift environment.
 
 The following Helm parameters are required:
 
-`plugin.image:` The location of the image containing the plugin that was previously pushed
+`plugin.image:` The location of the image containing the console plugin that was previously pushed
 
 Additional parameters can be specified if desired. Consult the chart values file for the full set of supported parameters.
 
 ### Installing the Helm Chart
 
-Install the chart using the name of the plugin as the Helm release name into a new namespace or an existing namespace as specified by the camel-openshift-console-plugin parameter and providing the location of the image within the `plugin.image` parameter by using the following command:
+Install the chart using the name of the console plugin as the Helm release name into a new namespace or an existing namespace as specified by the camel-dashboard-console parameter and providing the location of the image within the `plugin.image` parameter by using the following command:
 
 ```
-helm upgrade -i camel-openshift-console-plugin https://github.com/camel-tooling/camel-openshift-console-plugin/raw/refs/heads/main/docs/charts/camel-openshift-console-plugin-0.2.0.tgz --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-openshift-console-plugin:0.2.0
+helm upgrade -i camel-openshift-console-plugin https://github.com/camel-tooling/camel-dashboard-console/raw/refs/heads/main/docs/charts/camel-dashboard-console-0.2.0.tgz --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.2.0
 ```
 
 NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.2.0`) from the previous script accordingly.
