@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/camel-dashboard/docs/plugins/hawtio/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/plugins/hawtio/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/operator/installation/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/installation/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/operator/configuration/import/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/configuration/import/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/operator/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/plugins/oc-console/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/plugins/oc-console/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/operator/configuration/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/configuration/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/operator/configuration/tuning/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/configuration/tuning/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/plugins/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/plugins/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/docs/about/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/categories/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/camel-dashboard/tags/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/tags/</loc>
   </url>
 </urlset>
