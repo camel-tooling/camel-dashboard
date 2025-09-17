@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Plugins on Camel Dashboard</title>
-    <link>http://localhost:1313/camel-dashboard/docs/plugins/</link>
+    <link>https://camel-tooling.github.io/camel-dashboard/docs/plugins/</link>
     <description>Recent content in Plugins on Camel Dashboard</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/camel-dashboard/docs/plugins/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://camel-tooling.github.io/camel-dashboard/docs/plugins/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hawt.io Openshift Console Plugin</title>
-      <link>http://localhost:1313/camel-dashboard/docs/plugins/hawtio/</link>
+      <link>https://camel-tooling.github.io/camel-dashboard/docs/plugins/hawtio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/camel-dashboard/docs/plugins/hawtio/</guid>
+      <guid>https://camel-tooling.github.io/camel-dashboard/docs/plugins/hawtio/</guid>
       <description></description>
     </item>
     <item>
-      <title>Camel Openshift Console Plugin</title>
-      <link>http://localhost:1313/camel-dashboard/docs/plugins/oc-console/</link>
+      <title>Camel Dashboard Console</title>
+      <link>https://camel-tooling.github.io/camel-dashboard/docs/plugins/oc-console/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/camel-dashboard/docs/plugins/oc-console/</guid>
-      <description>&lt;p&gt;This operator can work standalone and you can use the data exposed in the &lt;code&gt;CamelApp&lt;/code&gt; custom resource accordingly. However it has a great fit with the &lt;a href=&#34;https://github.com/camel-tooling/camel-openshift-console-plugin?tab=readme-ov-file#deployment-to-openshift&#34;&gt;Camel Openshift Console Plugin&lt;/a&gt;, which is a visual representation of the services exposed by the operator.&lt;/p&gt;&#xA;&lt;h2 id=&#34;camel-openshift-console-plugin-dependencies-matrix&#34;&gt;Camel Openshift Console Plugin dependencies matrix&lt;/h2&gt;&#xA;&lt;p&gt;The Camel Openshift Console Plugin is an extension of OpenShift Console exposing the data from the Camel Dashboard Operator.&lt;/p&gt;&#xA;&lt;p&gt;Below you can find the compatibility list for its dependencies:&lt;/p&gt;</description>
+      <guid>https://camel-tooling.github.io/camel-dashboard/docs/plugins/oc-console/</guid>
+      <description>&lt;p&gt;This operator can work standalone and you can use the data exposed in the &lt;code&gt;CamelApp&lt;/code&gt; custom resource accordingly. However it has a great fit with the &lt;a href=&#34;https://github.com/camel-tooling/camel-dashboard-console?tab=readme-ov-file#deployment-to-openshift&#34;&gt;Camel Dashboard Console&lt;/a&gt;, which is a visual representation of the services exposed by the operator.&lt;/p&gt;&#xA;&lt;h2 id=&#34;camel-dashboard-console-dependencies-matrix&#34;&gt;Camel Dashboard Console dependencies matrix&lt;/h2&gt;&#xA;&lt;p&gt;The Camel Dashboard Console is a plugin extension of OpenShift Console exposing the data from the Camel Dashboard Operator.&lt;/p&gt;&#xA;&lt;p&gt;Below you can find the compatibility list for its dependencies:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

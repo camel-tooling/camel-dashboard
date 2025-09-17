@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Camel Dashboard</title>
-    <link>http://localhost:1313/camel-dashboard/docs/</link>
+    <link>https://camel-tooling.github.io/camel-dashboard/docs/</link>
     <description>Recent content on Camel Dashboard</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/camel-dashboard/docs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://camel-tooling.github.io/camel-dashboard/docs/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

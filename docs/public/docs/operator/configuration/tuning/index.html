@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head><script src="/camel-dashboard/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=camel-dashboard/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 
 
 <link rel="shortcut icon" href="/camel-dashboard/favicons/favicon.ico" >
@@ -21,7 +21,7 @@
 <meta name="description" content="There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
 Configure the metrics polling You can watch the metrics evolving as long as the application is running, for example via -w parameter:
 kubectl get camelapps -w NAME PHASE LAST EXCHANGE EXCHANGE SLI IMAGE REPLICAS INFO ... camel-app-413 Running 8m32s OK squakez/cdb:4.13 1 Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT) camel-app-main Running OK docker.io/squakez/db-app-main:1.0 1 Main - 4.11.0 (4.11.0) camel-app-quarkus Running Warning docker.io/squakez/db-app-quarkus:1.0 1 camel-app-sb Running Error docker.io/squakez/db-app-sb:1.0 1 Spring-Boot - 3.4.3 (4.11.0) The CamelApp are polled every minute by default. It should be enough in most cases, as the project is really a dashboard and not a proper monitoring tool. However, you can change this configuration if you want a more or less reactive polling. You can configure this value both at operator level (which would affect all the applications) or at single application level.">
-<meta property="og:url" content="http://localhost:1313/camel-dashboard/docs/operator/configuration/tuning/">
+<meta property="og:url" content="https://camel-tooling.github.io/camel-dashboard/docs/operator/configuration/tuning/">
   <meta property="og:site_name" content="Camel Dashboard">
   <meta property="og:title" content="Configure Camel application">
   <meta property="og:description" content="There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
@@ -45,8 +45,8 @@ kubectl get camelapps -w NAME PHASE LAST EXCHANGE EXCHANGE SLI IMAGE REPLICAS IN
 
 
 
-
-<link href="/camel-dashboard/scss/main.css" rel="stylesheet">
+<link rel="preload" href="/camel-dashboard/scss/main.min.85520886beb46c2ee5f23ff2ab103c279ba7bc3ead9078e750287b804a668a03.css" as="style">
+<link href="/camel-dashboard/scss/main.min.85520886beb46c2ee5f23ff2ab103c279ba7bc3ead9078e750287b804a668a03.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -109,7 +109,7 @@ kubectl get camelapps -w NAME PHASE LAST EXCHANGE EXCHANGE SLI IMAGE REPLICAS IN
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-camel-dashboarddocspluginshawtio-li">
   <a href="/camel-dashboard/docs/plugins/hawtio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-camel-dashboarddocspluginshawtio"><span class="">Hawt.io Openshift Console Plugin</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-camel-dashboarddocspluginsoc-console-li">
-  <a href="/camel-dashboard/docs/plugins/oc-console/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-camel-dashboarddocspluginsoc-console"><span class="">Camel Openshift Console Plugin</span></a>
+  <a href="/camel-dashboard/docs/plugins/oc-console/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-camel-dashboarddocspluginsoc-console"><span class="">Camel Dashboard Console</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-camel-dashboarddocsabout-li">
@@ -247,8 +247,8 @@ camel-app-sb        Running                   Error          docker.io/squakez/d
     </a>
   </li>
   
-  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub Camel Dashboard Plugin" aria-label="GitHub Camel Dashboard Plugin">
-    <a target="_blank" rel="noopener" href="https://github.com/camel-tooling/camel-openshift-console-plugin" aria-label="GitHub Camel Dashboard Plugin">
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub Camel Dashboard Console" aria-label="GitHub Camel Dashboard Console">
+    <a target="_blank" rel="noopener" href="https://github.com/camel-tooling/camel-dashboard-console" aria-label="GitHub Camel Dashboard Console">
       <i class="fab fa-github"></i>
     </a>
   </li>
@@ -263,8 +263,8 @@ camel-app-sb        Running                   Error          docker.io/squakez/d
 </footer>
 
     </div>
-    <script src="/camel-dashboard/js/main.js"></script>
-<script defer src="/camel-dashboard/js/click-to-copy.js" crossorigin="anonymous"></script>
+    <script src="/camel-dashboard/js/main.min.5aa73b08af39b19c3ffe7f7da9fbe04096829aff23a053ccd75ddb1bc636d797.js" integrity="sha256-Wqc7CK85sZw//n99qfvgQJaCmv8joFPM113bG8Y215c=" crossorigin="anonymous"></script>
+<script defer src="/camel-dashboard/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
 <script src='/camel-dashboard/js/tabpane-persist.js'></script>
 
   </body>
