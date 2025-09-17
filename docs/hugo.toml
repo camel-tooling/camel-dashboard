@@ -55,10 +55,10 @@ title = "Camel Dashboard"
     desc = "GitHub repository for Camel Dashboard Operator"
 
   [[params.links.developer]]
-    name = "GitHub Camel Dashboard Plugin"
-    url = "https://github.com/camel-tooling/camel-openshift-console-plugin"
+    name = "GitHub Camel Dashboard Console"
+    url = "https://github.com/camel-tooling/camel-dashboard-console"
     icon = "fab fa-github"
-    desc = "GitHub repository for Camel Dashboard Plugin"
+    desc = "GitHub repository for Camel Dashboard Console"
 
 
 
