@@ -69,6 +69,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
+          path: ${GITHUB_WORKSPACE}/main
           token: ${{ secrets.PAT }}
           commit-message: "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
           committer: github-actions[bot] <${GITHUB_ACTOR}@users.noreply.github.com>
