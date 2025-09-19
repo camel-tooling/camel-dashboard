@@ -61,6 +61,7 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
           git checkout -b camel-dashboard-helm-charts-${{ inputs.version }}
           git add ./charts/camel-dashboard-console-${{ inputs.version }}.tgz
+          git add ./charts/index.yaml
           git commit -m "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
           git push origin camel-dashboard-helm-charts-${{ inputs.version }}
       
@@ -72,3 +73,13 @@ jobs:
           commit-message: "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
           committer: github-actions[bot] <${GITHUB_ACTOR}@users.noreply.github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          branch: camel-dashboard-helm-charts-${{ inputs.version }}
+          delete-branch: true
+          signoff: false
+          draft: false
+          title: 'chore: Release helm chart camel-dashboard-console ${{ inputs.version }}'
+          body: |
+            Helm chart from camel-tooling/camel-dashboard-console repository:
+            - version ${{ inputs.version }}
+            - ref ${{ inputs.ref }}
+
