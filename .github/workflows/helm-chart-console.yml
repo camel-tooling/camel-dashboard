@@ -1,0 +1,61 @@
+name: helm-chart-console
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        type: string
+        required: true
+        description: branch/tag/etc from camel-dashboard-console to release
+      version:
+        type: string
+        required: true
+        description: version of the release
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print inputs
+        run: |
+          echo "Ref: ${{ inputs.ref }}"
+
+      - name: Checkout current repo
+        uses: actions/checkout@v2
+        with:
+          path: main
+      - name: Checkout charts repo
+        uses: actions/checkout@v5
+        with:
+          repository: camel-tooling/camel-dashboard-console
+          path: camel-dashboard-console
+          ref: "${{ inputs.ref }}"
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4.3.0
+
+      - name: Build charts
+        shell: bash
+        run: |
+          cd camel-dashboard-console
+          mkdir -p docs/charts
+          make CUSTOM_PLUGIN_VERSION=${{ inputs.version }} helm-release
+          ls docs/charts
+
+      - name: copy to charts repository
+        shell: bash
+        run: |
+          cd main
+          mkdir -p charts
+          cp ../camel-dashboard-console/docs/charts/camel-dashboard-console-${{ inputs.version }}.tgz charts/camel-dashboard-console-${{ inputs.version }}.tgz
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
+          git checkout -b camel-dashboard-helm-charts-${{ inputs.version }}
+          git add ./charts/camel-dashboard-console-${{ inputs.version }}.tgz
+          git commit -m "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
+          git push origin camel-dashboard-helm-charts-${{ inputs.version }}
