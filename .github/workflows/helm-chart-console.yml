@@ -54,7 +54,7 @@ jobs:
           cp ../camel-dashboard-console/docs/charts/camel-dashboard-console-${{ inputs.version }}.tgz charts/${{ inputs.version }}/camel-dashboard-console-${{ inputs.version }}.tgz
           cd charts
           helm repo index ${{ github.workspace }}/main/charts/${{ inputs.version }} --url https://camel-tooling.github.io/camel-dashboard/charts/ --merge ${{ github.workspace }}/main/charts/index.yaml
-          mv ${{ inputs.version }}/camel-dashboard-console-${{ inputs.version }}.tgz ${{ inputs.version }}/../camel-dashboard-console-${{ inputs.version }}.tgz
+          mv ${{ inputs.version }}/* ${{ inputs.version }}/../.
           cd ..
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${{ github.actor_id }}+${GITHUB_ACTOR}@users.noreply.github.com"
