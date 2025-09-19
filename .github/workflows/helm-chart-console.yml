@@ -58,14 +58,8 @@ jobs:
           cd ..
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${{ github.actor_id }}+${GITHUB_ACTOR}@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
-          git checkout -b camel-dashboard-helm-charts-${{ inputs.version }}-${{ github.run_id }}-${{ github.run_attempt }}
           git add ./charts/camel-dashboard-console-${{ inputs.version }}.tgz
           git add ./charts/index.yaml
-          git commit -m "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
-          git push origin camel-dashboard-helm-charts-${{ inputs.version }}-${{ github.run_id }}-${{ github.run_attempt }}
-          git show
-          git checkout main
       
       - name: Create Pull Request
         id: cpr
@@ -76,6 +70,7 @@ jobs:
           commit-message: "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
           committer: github-actions[bot] <${GITHUB_ACTOR}@users.noreply.github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          base: main
           branch: camel-dashboard-helm-charts-${{ inputs.version }}-${{ github.run_id }}-${{ github.run_attempt }}
           signoff: false
           draft: false
