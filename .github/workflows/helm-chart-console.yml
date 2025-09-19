@@ -63,7 +63,7 @@ jobs:
           git add ./charts/camel-dashboard-console-${{ inputs.version }}.tgz
           git add ./charts/index.yaml
           git commit -m "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
-          git push origin camel-dashboard-helm-charts-${{ inputs.version }}
+          git push origin camel-dashboard-helm-charts-${{ inputs.version }}-${{ github.run_id }}-${{ github.run_attempt }}
       
       - name: Create Pull Request
         id: cpr
