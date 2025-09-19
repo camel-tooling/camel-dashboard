@@ -50,16 +50,16 @@ jobs:
         shell: bash
         run: |
           cd main
-          mkdir -p charts/${{ inputs.version }}
-          cp ../camel-dashboard-console/docs/charts/camel-dashboard-console-${{ inputs.version }}.tgz charts/${{ inputs.version }}/camel-dashboard-console-${{ inputs.version }}.tgz
-          cd charts
-          helm repo index ${{ github.workspace }}/main/charts/${{ inputs.version }} --url https://camel-tooling.github.io/camel-dashboard/charts/ --merge ${{ github.workspace }}/main/charts/index.yaml
+          mkdir -p docs/charts/${{ inputs.version }}
+          cp ../camel-dashboard-console/docs/charts/camel-dashboard-console-${{ inputs.version }}.tgz docs/static/charts/${{ inputs.version }}/camel-dashboard-console-${{ inputs.version }}.tgz
+          cd docs/static/charts
+          helm repo index ${{ github.workspace }}/main/docs/static/charts/${{ inputs.version }} --url https://camel-tooling.github.io/camel-dashboard/charts/ --merge ${{ github.workspace }}/main/docs/static/charts/index.yaml
           mv ${{ inputs.version }}/* ${{ inputs.version }}/../.
-          cd ..
+          cd ../../..
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${{ github.actor_id }}+${GITHUB_ACTOR}@users.noreply.github.com"
-          git add ./charts/camel-dashboard-console-${{ inputs.version }}.tgz
-          git add ./charts/index.yaml
+          git add ./docs/static/charts/camel-dashboard-console-${{ inputs.version }}.tgz
+          git add ./docs/static/charts/index.yaml
       
       - name: Create Pull Request
         id: cpr
