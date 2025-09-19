@@ -46,16 +46,28 @@ jobs:
           make CUSTOM_PLUGIN_VERSION=${{ inputs.version }} helm-release
           ls docs/charts
 
-      - name: copy to charts repository
+      - name: Create branch with helm chart
         shell: bash
         run: |
           cd main
           mkdir -p charts
           cp ../camel-dashboard-console/docs/charts/camel-dashboard-console-${{ inputs.version }}.tgz charts/camel-dashboard-console-${{ inputs.version }}.tgz
+          cd charts
+          helm repo index ${{ github.workspace }}/charts/${{ inputs.version }} --url https://camel-tooling.github.io/camel-dashboard/charts/ --merge ${{ github.workspace }}/charts/index.yaml
+          cd ..
           git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+          git config --global user.email "${{ github.actor_id }}+${GITHUB_ACTOR}@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
           git checkout -b camel-dashboard-helm-charts-${{ inputs.version }}
           git add ./charts/camel-dashboard-console-${{ inputs.version }}.tgz
           git commit -m "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
           git push origin camel-dashboard-helm-charts-${{ inputs.version }}
+      
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.PAT }}
+          commit-message: "chore: Release helm chart camel-dashboard-console ${{ inputs.version }}"
+          committer: github-actions[bot] <${GITHUB_ACTOR}@users.noreply.github.com>
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
