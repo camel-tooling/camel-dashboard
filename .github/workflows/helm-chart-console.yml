@@ -43,7 +43,7 @@ jobs:
         run: |
           cd camel-dashboard-console
           mkdir -p docs/charts
-          make CUSTOM_PLUGIN_VERSION=${{ inputs.version }} helm-release
+          make CUSTOM_PLUGIN_CHART_VERSION=${{ inputs.version }} helm-release
           ls docs/charts
 
       - name: Create branch with helm chart
