@@ -2,23 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://camel-tooling.github.io/camel-dashboard/docs/plugins/hawtio/</loc>
-  </url><url>
     <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/installation/</loc>
   </url><url>
     <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/configuration/import/</loc>
   </url><url>
     <loc>https://camel-tooling.github.io/camel-dashboard/docs/</loc>
   </url><url>
-    <loc>https://camel-tooling.github.io/camel-dashboard/docs/plugins/oc-console/</loc>
-  </url><url>
-    <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/</loc>
-  </url><url>
     <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/configuration/</loc>
   </url><url>
     <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/configuration/tuning/</loc>
   </url><url>
-    <loc>https://camel-tooling.github.io/camel-dashboard/docs/plugins/</loc>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/operator/</loc>
+  </url><url>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/console/</loc>
+  </url><url>
+    <loc>https://camel-tooling.github.io/camel-dashboard/docs/hawtio/</loc>
   </url><url>
     <loc>https://camel-tooling.github.io/camel-dashboard/docs/about/</loc>
   </url><url>

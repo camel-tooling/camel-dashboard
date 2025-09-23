@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="https://camel-tooling.github.io/camel-dashboard/docs/console/index.xml">
 <meta name="robots" content="index, follow">
 
 
@@ -18,24 +19,21 @@
 <link rel="icon" type="image/png" href="/camel-dashboard/favicons/android-192x192.png" sizes="192x192">
 
 <title>Camel Dashboard Console | Camel Dashboard</title>
-<meta name="description" content="This operator can work standalone and you can use the data exposed in the CamelApp custom resource accordingly. However it has a great fit with the Camel Dashboard Console, which is a visual representation of the services exposed by the operator.
-Camel Dashboard Console dependencies matrix The Camel Dashboard Console is a plugin extension of OpenShift Console exposing the data from the Camel Dashboard Operator.
-Below you can find the compatibility list for its dependencies:">
-<meta property="og:url" content="https://camel-tooling.github.io/camel-dashboard/docs/plugins/oc-console/">
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+<meta property="og:url" content="https://camel-tooling.github.io/camel-dashboard/docs/console/">
   <meta property="og:site_name" content="Camel Dashboard">
   <meta property="og:title" content="Camel Dashboard Console">
   <meta property="og:description" content="This operator can work standalone and you can use the data exposed in the CamelApp custom resource accordingly. However it has a great fit with the Camel Dashboard Console, which is a visual representation of the services exposed by the operator.
 Camel Dashboard Console dependencies matrix The Camel Dashboard Console is a plugin extension of OpenShift Console exposing the data from the Camel Dashboard Operator.
 Below you can find the compatibility list for its dependencies:">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
+  <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Camel Dashboard Console">
   <meta itemprop="description" content="This operator can work standalone and you can use the data exposed in the CamelApp custom resource accordingly. However it has a great fit with the Camel Dashboard Console, which is a visual representation of the services exposed by the operator.
 Camel Dashboard Console dependencies matrix The Camel Dashboard Console is a plugin extension of OpenShift Console exposing the data from the Camel Dashboard Operator.
 Below you can find the compatibility list for its dependencies:">
-  <meta itemprop="wordCount" content="242">
+  <meta itemprop="wordCount" content="346">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Camel Dashboard Console">
   <meta name="twitter:description" content="This operator can work standalone and you can use the data exposed in the CamelApp custom resource accordingly. However it has a great fit with the Camel Dashboard Console, which is a visual representation of the services exposed by the operator.
@@ -54,7 +52,7 @@ Below you can find the compatibility list for its dependencies:">
   crossorigin="anonymous"></script>
 
   </head>
-  <body class="td-page">
+  <body class="td-section">
     <header>
       <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
 <div class="container-fluid flex-column flex-md-row">
@@ -103,15 +101,10 @@ Below you can find the compatibility list for its dependencies:">
   </ul>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-camel-dashboarddocsplugins-li">
-  <a href="/camel-dashboard/docs/plugins/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsplugins"><span class="">Plugins</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-camel-dashboarddocspluginshawtio-li">
-  <a href="/camel-dashboard/docs/plugins/hawtio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-camel-dashboarddocspluginshawtio"><span class="">Hawt.io Openshift Console Plugin</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-camel-dashboarddocspluginsoc-console-li">
-  <a href="/camel-dashboard/docs/plugins/oc-console/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-camel-dashboarddocspluginsoc-console"><span class="td-sidebar-nav-active-item">Camel Dashboard Console</span></a>
-</li>
-  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-camel-dashboarddocsconsole-li">
+  <a href="/camel-dashboard/docs/console/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsconsole"><span class="td-sidebar-nav-active-item">Camel Dashboard Console</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-camel-dashboarddocshawtio-li">
+  <a href="/camel-dashboard/docs/hawtio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocshawtio"><span class="">HawtIO Console Plugin</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-camel-dashboarddocsabout-li">
   <a href="/camel-dashboard/docs/about/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-camel-dashboarddocsabout"><span class="">About</span></a>
 </li>
@@ -124,9 +117,9 @@ Below you can find the compatibility list for its dependencies:">
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
             <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
-<a href="https://github.com/camel-tooling/camel-dashboard/tree/main/content/docs/plugins/oc-console.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
-  <a href="https://github.com/camel-tooling/camel-dashboard/edit/main/content/docs/plugins/oc-console.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
-  <a href="https://github.com/camel-tooling/camel-dashboard/new/main/content/docs/plugins?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+<a href="https://github.com/camel-tooling/camel-dashboard/tree/main/content/docs/console/_index.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/camel-tooling/camel-dashboard/edit/main/content/docs/console/_index.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/camel-tooling/camel-dashboard/new/main/content/docs/console?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
   <a href="https://github.com/camel-tooling/camel-dashboard/issues/new?title=Camel%20Dashboard%20Console" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
   
 </div>
@@ -140,6 +133,7 @@ Below you can find the compatibility list for its dependencies:">
         <li><a href="#installing-the-helm-chart">Installing the Helm Chart</a></li>
       </ul>
     </li>
+    <li><a href="#overview">Overview</a></li>
   </ul>
 </nav>
       </div>
@@ -155,8 +149,6 @@ Below you can find the compatibility list for its dependencies:">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="/camel-dashboard/docs/">Camel Dashboard</a></li>
-  <li class="breadcrumb-item">
-    <a href="/camel-dashboard/docs/plugins/">Plugins</a></li>
   <li class="breadcrumb-item active" aria-current="page">
     Camel Dashboard Console</li>
   </ol>
@@ -164,7 +156,7 @@ Below you can find the compatibility list for its dependencies:">
             
 <div class="td-content">
 	<h1>Camel Dashboard Console</h1>
-	
+  
 	<header class="article-meta">
 		
 </header>
@@ -208,10 +200,63 @@ Below you can find the compatibility list for its dependencies:">
 <p>Install the chart using the name of the console plugin as the Helm release name into a new namespace or an existing namespace as specified by the camel-dashboard-console parameter and providing the location of the image within the <code>plugin.image</code> parameter by using the following command:</p>
 <pre tabindex="0"><code>helm upgrade -i camel-openshift-console-plugin https://github.com/camel-tooling/camel-dashboard-console/raw/refs/heads/main/docs/charts/camel-dashboard-console-0.2.0.tgz --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.2.0
 </code></pre><p>NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, <code>0.2.0</code>) from the previous script accordingly.</p>
+<h2 id="overview">Overview</h2>
+<p>Once installed, the <strong>Camel Dashboard Console</strong> features should be accessible in the OpenShift Console.</p>
+<ul>
+<li>The <em>Camel Applications</em> page displays the list of your deployed Camel Applications. It is available as a <code>Workloads</code> tab on the <code>admin</code> view and as a navigation tab on the <code>developer</code> view.</li>
+</ul>
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 2530px">
+<img class="card-img-top" src="/camel-dashboard/docs/console/oc-console-list-419_hu_55c87b6920207490.png" width="2520" height="1102">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+<p><small class="text-body-secondary"><br/>Camel Applications List</small></p>
+</p>
+</figcaption>
+</figure>
+<ul>
+<li>
+<p>The <em>Camel Application</em> page will show informations and metrics for the chose deployed Camel Application</p>
+<ul>
+<li>informations from the Observability Services</li>
+</ul>
+</li>
+</ul>
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 2530px">
+<img class="card-img-top" src="/camel-dashboard/docs/console/oc-console-details-419_hu_6ba8875f9b5a9c64.png" width="2520" height="1102">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+<p><small class="text-body-secondary"><br/>Camel Application Details</small></p>
+</p>
+</figcaption>
+</figure>
+<ul>
+<li>Kubernetes native resources linked to the deployment, with some acces to logs, hawtio console, etc</li>
+</ul>
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 2530px">
+<img class="card-img-top" src="/camel-dashboard/docs/console/oc-console-resources-419_hu_37c60ecc73f0e34d.png" width="2520" height="1102">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+<p><small class="text-body-secondary"><br/>Camel Application &gt; Resources</small></p>
+</p>
+</figcaption>
+</figure>
+<ul>
+<li>Prometheus metrics on resources utilization for the deployment</li>
+</ul>
+<figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 2530px">
+<img class="card-img-top" src="/camel-dashboard/docs/console/oc-console-metrics-419_hu_58052ac04d738a0d.png" width="2520" height="1102">
+<figcaption class="card-body px-0 pt-2 pb-0">
+<p class="card-text">
+<p><small class="text-body-secondary"><br/>Camel Application &gt; Metrics</small></p>
+</p>
+</figcaption>
+</figure>
 
-	
+  <div class="section-index">
+    
+    
+    </div>
 </div>
-
 
           </main>
         </div>
