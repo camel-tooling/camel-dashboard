@@ -37,4 +37,47 @@ entries:
     urls:
     - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-console-0.1.0.tgz
     version: 0.1.0
+  camel-dashboard-operator:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2025-09-23T11:54:55.812983717+02:00"
+    description: TODO
+    digest: de0ac6935873a2bea309ea4fdaab5ce478fe66dfdc766aaedc1bdc8ce68fd1a5
+    home: https://camel.apache.org/camel/latest/
+    icon: https://github.com/apache/camel/raw/main/docs/img/logo64-d.png
+    keywords:
+    - integration
+    - camel
+    - dashboard
+    maintainers:
+    - email: pcongiusti@apache.org
+      name: pcongiusti
+    name: camel-dashboard-operator
+    sources:
+    - https://github.com/camel-tooling/camel-dashboard-operator
+    type: application
+    urls:
+    - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-operator-0.0.1.tgz
+    version: 0.0.1
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2025-09-23T11:57:27.264648395+02:00"
+    description: TODO
+    digest: a61239288c7e7581cfb0ccbe534dac25fa8d1d0d0e0c30011ad8a4681b64401c
+    home: https://camel.apache.org/camel/latest/
+    icon: https://github.com/apache/camel/raw/main/docs/img/logo64-d.png
+    keywords:
+    - integration
+    - camel
+    - dashboard
+    maintainers:
+    - email: pcongiusti@apache.org
+      name: pcongiusti
+    name: camel-dashboard-operator
+    sources:
+    - https://github.com/camel-tooling/camel-dashboard-operator
+    type: application
+    urls:
+    - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-operator-0.1.0.tgz
+    version: 0.1.0
 generated: "2025-09-19T12:40:55.922121426Z"
