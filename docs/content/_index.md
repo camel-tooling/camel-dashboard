@@ -12,6 +12,7 @@ linkTitle: "Camel Dashboard"
 		Download <i class="fab fa-github ml-2 "></i>
 	</a>
 	<p class="lead mt-5">Monitor your fleet of Camel applications on Kubernetes</p>
+{{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
 
 {{% blocks/lead color="light" %}}
