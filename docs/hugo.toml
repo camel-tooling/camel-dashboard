@@ -77,3 +77,7 @@ title = "Camel Dashboard"
     name = "Documentation"
     url = "/docs/"
     weight = 10
+  [[menu.main]]
+    name = "User guide"
+    url = "/docs/user-guide/"
+    weight = 20
