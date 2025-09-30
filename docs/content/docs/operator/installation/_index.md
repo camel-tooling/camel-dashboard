@@ -1,5 +1,5 @@
 ---
-title: "How to install the operator"
+title: "Installation"
 weight: 10
 ---
 
