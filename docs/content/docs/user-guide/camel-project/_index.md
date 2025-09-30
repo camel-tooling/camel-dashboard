@@ -1,7 +1,7 @@
 ---
 title: "Camel Project"
 linkTitle: "Camel Project"
-weight: 10
+weight: 20
 ---
 
 You need an Camel Application to monitor. If you don't have one yet, this guide briefly covers how to create an Apache Camel Project.
