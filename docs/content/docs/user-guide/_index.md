@@ -6,7 +6,7 @@ weight: 60
 
 
 
-On you installed Camel Dashboard, TODO
+Now that Camel Dashboard is installed, TODO
 
 
 

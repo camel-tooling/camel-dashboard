@@ -74,8 +74,8 @@ title = "Camel Dashboard"
 # Menu configuration for Docsy
 [menu]
   [[menu.main]]
-    name = "Documentation"
-    url = "/docs/"
+    name = "Installation"
+    url = "/docs/installation-guide/"
     weight = 10
   [[menu.main]]
     name = "User guide"
