@@ -7,12 +7,12 @@ You can use [Helm](https://helm.sh) to install the operator resources. You can i
 
 
 * Add the chart repository to the local helm [configuration](https://helm.sh/docs/helm/helm_repo_add/):
-```
+```bash
 $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/charts
 ```
 
 * Confirm the addition of the repository:
-```
+```bash
 $ helm repo list
 
 NAME    URL                                   
@@ -20,7 +20,7 @@ camel-tooling	https://camel-tooling.github.io/camel-dashboard/charts/
 ```
 
 * Install the *operator* using the helm [install](https://helm.sh/docs/helm/helm_install/) command:
-```
+```bash
 $ helm install camel-dashboard-operator camel-tooling/camel-dashboard-operator --version 0.1.0 -n camel-dashboard
 ```
 
@@ -28,8 +28,8 @@ $ helm install camel-dashboard-operator camel-tooling/camel-dashboard-operator -
 
 You can check if the operator is running:
 
-```
-kubectl get pods -n camel-dashboard
+```bash
+$ kubectl get pods -n camel-dashboard
 NAME                                        READY   STATUS    RESTARTS   AGE
 camel-dashboard-operator-7c6bcf5576-fwn7s   1/1     Running   0          4m18s
 ```
