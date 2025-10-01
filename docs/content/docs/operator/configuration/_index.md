@@ -25,8 +25,8 @@ As you will discover in the configuraton chapter, you can provide specific confi
 
 You can watch the metrics evolving as long as the application is running, for example via `-w` parameter:
 
-```
-kubectl get camelapps -w
+```bash
+$ kubectl get camelapps -w
 
 NAME                PHASE     LAST EXCHANGE   EXCHANGE SLI   IMAGE                                  REPLICAS   INFO
 ...
