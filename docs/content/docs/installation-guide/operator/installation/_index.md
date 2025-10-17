@@ -21,7 +21,7 @@ camel-tooling	https://camel-tooling.github.io/camel-dashboard/charts/
 
 * Install the *operator* using the helm [install](https://helm.sh/docs/helm/helm_install/) command:
 ```bash
-$ helm install camel-dashboard-operator camel-tooling/camel-dashboard-operator --version 0.1.0 -n camel-dashboard
+$ helm install camel-dashboard-operator camel-dashboard/camel-dashboard-operator --version 0.1.0 -n camel-dashboard --set operator.image=quay.io/camel-tooling/camel-dashboard-operator:0.1.0
 ```
 
 > NOTE: The installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.1.0`) from the previous script accordingly.
