@@ -4,7 +4,7 @@ This directory contains the documentation website for the Camel Dashboard, built
 
 ## Prerequisites
 
-- **Hugo Extended** (v0.142.0 or later): [Install Hugo](https://gohugo.io/installation/)
+- **Hugo Extended** (v0.151.0 or later): [Install Hugo](https://gohugo.io/installation/)
 - **Node.js and npm**: [Install Node.js](https://nodejs.org/)
 - **Git**: For cloning repositories and Hugo modules
 
@@ -54,24 +54,6 @@ hugo --minify
 
 # Build for specific environment
 hugo --environment production
-```
-
-## Project Structure
-
-```
-docs/
-├── content/           # All content files
-│   ├── _index.md     # Homepage content
-│   └── docs/         # Documentation sections
-│       ├── installation/
-│       ├── configuration/
-│       ├── plugins/
-│       └── about/
-├── static/           # Static assets (images, files)
-├── hugo.toml         # Hugo configuration
-├── package.json      # npm dependencies
-├── go.mod           # Hugo modules
-└── public/          # Generated site (created by hugo build)
 ```
 
 ## Configuration
@@ -135,7 +117,7 @@ Alert message
 **Hugo modules not found:**
 ```bash
 hugo mod tidy
-hugo mod get github.com/google/docsy@v0.10.0
+hugo mod get github.com/google/docsy@v0.12.0
 ```
 
 **PostCSS errors:**
