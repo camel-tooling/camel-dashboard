@@ -50,7 +50,7 @@ jobs:
         shell: bash
         run: |
           cd main
-          mkdir -p docs/charts/${{ inputs.version }}
+          mkdir -p docs/static/charts/${{ inputs.version }}
           cp ../camel-dashboard-console/docs/charts/camel-dashboard-console-${{ inputs.version }}.tgz docs/static/charts/${{ inputs.version }}/camel-dashboard-console-${{ inputs.version }}.tgz
           cd docs/static/charts
           helm repo index ${{ github.workspace }}/main/docs/static/charts/${{ inputs.version }} --url https://camel-tooling.github.io/camel-dashboard/charts/ --merge ${{ github.workspace }}/main/docs/static/charts/index.yaml
