@@ -18,6 +18,7 @@ title = "Camel Dashboard"
   edit_page = true
   search_enabled = true
   github_subdir = "docs"
+  prism_syntax_highlighting = true
   
   # Custom CSS for Camel branding (Docsy style)
   [params.links]
