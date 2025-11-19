@@ -12,7 +12,7 @@ Let's run some sample Camel application. We have prepared a few available to run
 * A Camel Quarkus application available at `docker.io/squakez/db-app-quarkus:1.0`
 * A Camel Spring Boot application available at `docker.io/squakez/db-app-sb:1.0`
 
-These applications were created, exported and "containerized" via Camel JBang, which includes by default the aforementioned `camel-observability-services` dependency.
+These applications were created, exported and "containerized" via Camel JBang, which includes by default the aforementioned `camel-observability-services` dependency. Source code available in https://github.com/camel-tooling/camel-dashboard-samples.
 
 Let's run them in a Kubernetes cluster (it also works in a local cluster such as `Minikube`):
 
