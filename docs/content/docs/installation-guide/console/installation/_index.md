@@ -22,7 +22,7 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 Install the chart using the name of the console plugin as the Helm release name into a new namespace or an existing namespace as specified by the camel-dashboard-console parameter and providing the location of the image within the `plugin.image` parameter by using the following command:
 
 ```bash
-helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console --version 0.2.1 --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.2.1
+helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console --version 0.2.2 --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.2.2
 ```
 
-> NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.2.1`) from the previous script accordingly.
+> NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.2.2`) from the previous script accordingly.
