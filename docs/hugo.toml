@@ -2,12 +2,18 @@ baseURL = "https://camel-tooling.github.io/camel-dashboard/"
 languageCode = "en-us"
 title = "Camel Dashboard"
 enableRobotsTXT = true
+enableGitInfo = true
 
 # SEO Configuration
 [taxonomies]
   tag = "tags"
   category = "categories"
 
+# Sitemap configuration
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
 
 # Hugo modules configuration
 [module]
