@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>About on Camel Dashboard</title>
-    <link>https://camel-tooling.github.io/camel-dashboard/docs/about/</link>
-    <description>Recent content in About on Camel Dashboard</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="https://camel-tooling.github.io/camel-dashboard/docs/about/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>About on Camel Dashboard</title><link>https://camel-tooling.github.io/camel-dashboard/docs/about/</link><description>Recent content in About on Camel Dashboard</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://camel-tooling.github.io/camel-dashboard/docs/about/index.xml" rel="self" type="application/rss+xml"/></channel></rss>

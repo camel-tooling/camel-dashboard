@@ -1,12 +1,1 @@
-# robots.txt for Camel Dashboard Documentation
-# https://camel-tooling.github.io/camel-dashboard/
-
 User-agent: *
-Allow: /
-Disallow: /404.html
-
-# Sitemap
-Sitemap: https://camel-tooling.github.io/camel-dashboard/sitemap.xml
-
-# Crawl-delay for better server performance
-Crawl-delay: 1
