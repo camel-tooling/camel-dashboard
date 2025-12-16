@@ -1,6 +1,13 @@
 baseURL = "https://camel-tooling.github.io/camel-dashboard/"
 languageCode = "en-us"
 title = "Camel Dashboard"
+enableRobotsTXT = true
+
+# SEO Configuration
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
 
 # Hugo modules configuration
 [module]
@@ -19,6 +26,20 @@ title = "Camel Dashboard"
   search_enabled = true
   github_subdir = "docs"
   prism_syntax_highlighting = true
+
+  # SEO Parameters - Optimized for international English search
+  description = "Camel Dashboard is a lightweight monitoring tool for Apache Camel applications running on Kubernetes and OpenShift. Track routes, exchanges, and performance metrics in real-time."
+  keywords = ["camel dashboard", "Apache Camel", "Kubernetes", "monitoring", "dashboard", "OpenShift", "microservices", "integration", "observability", "cloud native", "container orchestration", "Camel routes", "performance metrics", "real-time monitoring", "Kubernetes monitoring", "OpenShift monitoring", "integration monitoring"]
+  author = "Camel Tooling"
+  images = ["/camel-dashboard/images/logo.png"]
+
+  # Enhanced meta information
+  site_description_long = "Monitor and manage your Apache Camel applications on Kubernetes and OpenShift with Camel Dashboard. Real-time metrics, route tracking, and lightweight design for optimal performance in cloud-native environments."
+
+  # Open Graph and Twitter Card settings
+  [params.og]
+    type = "website"
+    site_name = "Camel Dashboard"
   
   # Custom CSS for Camel branding (Docsy style)
   [params.links]
