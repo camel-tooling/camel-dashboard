@@ -4,6 +4,10 @@ title = "Camel Dashboard"
 enableRobotsTXT = true
 enableGitInfo = true
 
+# Output formats - Enable RSS for sections
+[outputs]
+  section = ["HTML", "RSS"]
+
 # SEO Configuration
 [taxonomies]
   tag = "tags"
@@ -42,6 +46,9 @@ enableGitInfo = true
   # Enhanced meta information
   site_description_long = "Monitor and manage your Apache Camel applications on Kubernetes and OpenShift with Camel Dashboard. Real-time metrics, route tracking, and lightweight design for optimal performance in cloud-native environments."
 
+  # News/Blog configuration
+  time_format_blog = "Monday, January 02, 2006"
+
   # Open Graph and Twitter Card settings
   [params.og]
     type = "website"
@@ -74,6 +81,7 @@ enableGitInfo = true
     taxonomy_breadcrumb_disable = false
     navbar_logo = true
     footer_about_enable = true
+    rss_sections = ["blog"]
     
   # Links for header and footer
     
