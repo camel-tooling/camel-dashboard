@@ -236,9 +236,61 @@ code {
   border-left: 4px solid $camel-blue;
   padding: 1rem;
   margin: 1rem 0;
-  
+
   &-primary {
     background-color: rgba($camel-orange, 0.1);
     border-left-color: $camel-orange;
   }
+}
+
+/* News Section Styles */
+.recent-news-widget {
+  padding: 2rem 0;
+
+  h2 {
+    color: $camel-blue !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+}
+
+.news-card {
+  border-left: 4px solid $camel-orange;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-left-color: darken($camel-orange, 10%);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+.news-title-link {
+  color: $camel-blue;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    color: $camel-blue-light;
+    text-decoration: underline;
+  }
+}
+
+.news-tag {
+  background-color: $camel-orange;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.25rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+}
+
+.news-meta {
+  margin-top: 0.75rem;
 }

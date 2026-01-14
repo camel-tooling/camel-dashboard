@@ -32,3 +32,7 @@ Developed under Apache license as a spin-off of Camel K project.
 {{% /blocks/feature %}}
 
 {{< /blocks/section >}}
+
+{{< blocks/section color="white" >}}
+{{< recent-news >}}
+{{< /blocks/section >}}
