@@ -13,7 +13,8 @@ Below you can find the compatibility list for its dependencies:
 
 | Camel Dashboard Console | Openshift          | Camel Dashboard Operator |
 | ----------------------- | ------------------ | ------------------------ |
-| next (0.3.0)            | Openshift 4.19     | 0.1.0                    |
+| next (0.3.2)            | Openshift 4.20+    | 0.1.0                    |
+| 0.3.1                   | Openshift 4.20+    | 0.1.0                    |
 | 0.2.2                   | Openshift 4.19     | 0.1.0                    |
 | 0.1.0                   | Openshift 4.18     | 0.0.1                    |
 
