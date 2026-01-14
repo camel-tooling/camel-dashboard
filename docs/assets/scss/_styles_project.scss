@@ -255,6 +255,111 @@ code {
   }
 }
 
+/* News widget inside hero/cover section */
+.td-cover-block .recent-news-widget {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    color: white !important;
+    font-size: 1.5rem;
+  }
+
+  .news-card {
+    background-color: rgba(white, 0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .news-title-link {
+    color: $camel-blue;
+    font-size: 1.1rem;
+  }
+
+  .btn-primary {
+    background-color: white;
+    color: $camel-orange;
+    border-color: white;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $camel-orange;
+      color: white;
+      border-color: $camel-orange;
+    }
+  }
+
+  /* Compact banner style */
+  &.compact {
+    .news-banner {
+      background-color: rgba(white, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      .news-icon {
+        font-size: 1.5rem;
+        line-height: 1;
+        background-color: white;
+        border: 2px solid $camel-orange;
+        border-radius: 8px;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 2px 4px rgba($camel-orange, 0.2);
+      }
+
+      .news-content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+
+        strong {
+          color: $camel-blue;
+          font-size: 1rem;
+          text-align: left;
+        }
+
+        .news-date {
+          color: #666;
+          font-size: 0.875rem;
+        }
+      }
+
+      .news-link {
+        background-color: $camel-orange;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        white-space: nowrap;
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: darken($camel-orange, 10%);
+          color: white;
+          text-decoration: none;
+          transform: translateY(-1px);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
 .news-card {
   border-left: 4px solid $camel-orange;
   transition: all 0.3s ease;

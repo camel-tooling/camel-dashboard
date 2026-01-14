@@ -4,6 +4,7 @@ linkTitle: ""
 date: {{ .Date }}
 author: "Camel Tooling Team"
 tags: []
+icon: "sparkles"  # Options: sparkles (✨), rocket (🚀), lightbulb (💡)
 draft: true
 ---
 
