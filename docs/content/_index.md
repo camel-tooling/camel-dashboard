@@ -9,6 +9,8 @@ linkTitle: "Camel Dashboard"
 		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 	</a>
 	<p class="lead mt-5">Monitor your fleet of Camel applications on Kubernetes</p>
+</div>
+
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
 
@@ -31,8 +33,4 @@ Monitor your Camel applications in real-time with custom resources and metrics c
 Developed under Apache license as a spin-off of Camel K project.
 {{% /blocks/feature %}}
 
-{{< /blocks/section >}}
-
-{{< blocks/section color="white" >}}
-{{< recent-news >}}
 {{< /blocks/section >}}

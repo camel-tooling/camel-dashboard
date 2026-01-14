@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ .Content }}
+
+{{/* Inject news widget into the cover section with JavaScript */}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find the cover block
+  var coverBlock = document.querySelector('.td-cover-block');
+  if (coverBlock) {
+    // Create news widget HTML
+    var newsWidget = document.createElement('div');
+    newsWidget.className = 'mt-5 mx-auto news-in-hero';
+    newsWidget.style.maxWidth = '900px';
+    newsWidget.innerHTML = `{{ partial "recent-news.html" . }}`;
+
+    // Find the down arrow link and insert news widget before it
+    var downArrow = coverBlock.querySelector('.fa-circle-chevron-down');
+    if (downArrow) {
+      // Get the paragraph containing the down arrow
+      var downArrowPara = downArrow.closest('p');
+      if (downArrowPara) {
+        downArrowPara.parentNode.insertBefore(newsWidget, downArrowPara);
+      }
+    }
+  }
+});
+</script>
+{{ end }}
