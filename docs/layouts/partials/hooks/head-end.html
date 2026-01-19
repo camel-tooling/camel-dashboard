@@ -21,32 +21,8 @@
 {{/* Canonical URL */}}
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{/* Open Graph tags */}}
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:site_name" content="{{ .Site.Title }}" />
-{{ if .Params.image }}
-  <meta property="og:image" content="{{ .Params.image | absURL }}" />
-{{ else }}
-  {{ with .Site.Params.images }}
-    <meta property="og:image" content="{{ index . 0 | absURL }}" />
-  {{ end }}
-{{ end }}
-
-{{/* Twitter Card */}}
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-{{ if .Params.image }}
-  <meta name="twitter:image" content="{{ .Params.image | absURL }}" />
-{{ else }}
-  {{ with .Site.Params.images }}
-    <meta name="twitter:image" content="{{ index . 0 | absURL }}" />
-  {{ end }}
-{{ end }}
+{{/* Open Graph and Twitter Card tags are handled by Hugo's internal templates.
+     Use 'images: []' in front matter to specify page-specific social media images. */}}
 
 {{/* JSON-LD Structured Data - SoftwareApplication */}}
 <script type="application/ld+json">

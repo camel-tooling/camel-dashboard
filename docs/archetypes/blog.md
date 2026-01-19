@@ -5,7 +5,7 @@ date: {{ .Date }}
 author: "Camel Tooling Team"
 tags: []
 icon: "sparkles"  # Options: sparkles (✨), rocket (🚀), lightbulb (💡)
-image: ""  # Path to social media image (e.g., "/camel-dashboard/images/blog/my-post-image.png")
+images: []  # Social media images (e.g., ["/camel-dashboard/images/blog/my-post-image.png"])
 draft: true
 ---
 

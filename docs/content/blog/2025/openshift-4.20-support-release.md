@@ -5,7 +5,7 @@ date: 2025-01-16
 author: '[Gaëlle Fournier](https://github.com/gansheer)'
 tags: ["release", "console", "hawtio", "openshift"]
 icon: "rocket"
-image: "/camel-dashboard/images/blog/camels_blog_1.jpg"
+images: ["/camel-dashboard/images/blog/camels_blog_1.jpg"]
 ---
 
 ![Camel Dashboard + OpenShift 4.20](/camel-dashboard/images/blog/camels_blog_1.jpg)
