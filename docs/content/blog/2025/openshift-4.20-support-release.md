@@ -5,7 +5,11 @@ date: 2025-01-16
 author: '[Gaëlle Fournier](https://github.com/gansheer)'
 tags: ["release", "console", "hawtio", "openshift"]
 icon: "rocket"
+image: "/camel-dashboard/images/blog/camels_blog_1.jpg"
 ---
+
+![Camel Dashboard + OpenShift 4.20](/camel-dashboard/images/blog/camels_blog_1.jpg)
+
 
 We're pleased to announce that **Camel Dashboard is now fully compatible with OpenShift 4.20** with new releases of both console plugins!
 
