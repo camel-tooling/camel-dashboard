@@ -1,2 +1,5 @@
 # Dependency directories
 docs/node_modules/
+# generated directories
+public/
+resources/
