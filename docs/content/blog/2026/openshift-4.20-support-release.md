@@ -1,11 +1,13 @@
 ---
 title: "Camel Dashboard Now Compatible with OpenShift 4.20"
 linkTitle: "OpenShift 4.20 Support"
-date: 2025-01-16
+date: 2026-01-16
 author: '[Gaëlle Fournier](https://github.com/gansheer)'
 tags: ["release", "console", "hawtio", "openshift"]
 icon: "rocket"
 images: ["/camel-dashboard/images/blog/camels_blog_1.jpg"]
+aliases:
+    /blog/2025/openshift-4.20-support-release/
 ---
 
 ![Camel Dashboard + OpenShift 4.20](/camel-dashboard/images/blog/camels_blog_1.jpg)
