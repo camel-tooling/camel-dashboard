@@ -76,6 +76,32 @@
 </script>
 {{ end }}
 
+{{ if not .IsHome }}
+{{/* JSON-LD Structured Data - BreadcrumbList for navigation */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {{ range $index, $element := .Ancestors.Reverse }}
+    {
+      "@type": "ListItem",
+      "position": {{ add $index 1 }},
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    },
+    {{ end }}
+    {
+      "@type": "ListItem",
+      "position": {{ add (len .Ancestors) 1 }},
+      "name": "{{ .Title }}"{{ with .Permalink }},
+      "item": "{{ . }}"{{ end }}
+    }
+  ]
+}
+</script>
+{{ end }}
+
 {{/* Preconnect to improve performance */}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

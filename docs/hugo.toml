@@ -107,6 +107,11 @@ enableGitInfo = true
     style = "github"
     lineNos = true
 
+# Image processing configuration
+[imaging]
+  quality = 85
+  resampleFilter = "Lanczos"
+
 # Menu configuration for Docsy
 [menu]
   [[menu.main]]
