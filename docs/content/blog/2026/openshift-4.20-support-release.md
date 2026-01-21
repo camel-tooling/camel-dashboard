@@ -10,7 +10,7 @@ aliases:
     /blog/2025/openshift-4.20-support-release/
 ---
 
-![Camel Dashboard + OpenShift 4.20](/camel-dashboard/images/blog/camels_blog_1.jpg)
+![Camel Dashboard monitoring interface showing real-time metrics for Apache Camel applications running on OpenShift 4.20 clusters](/camel-dashboard/images/blog/camels_blog_1.jpg)
 
 
 We're pleased to announce that **Camel Dashboard is now fully compatible with OpenShift 4.20** with new releases of both console plugins!
