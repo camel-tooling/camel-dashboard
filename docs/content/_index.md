@@ -1,6 +1,7 @@
 ---
-title: "Camel Dashboard"
+title: "Camel Dashboard - Kubernetes Monitoring for Apache Camel"
 linkTitle: "Camel Dashboard"
+description: "Lightweight monitoring tool for Apache Camel applications on Kubernetes and OpenShift. Real-time route tracking, performance metrics, and visual dashboards for your Camel integrations."
 ---
 
 {{< blocks/cover title="Camel Dashboard" image_anchor="top" height="full" >}}
