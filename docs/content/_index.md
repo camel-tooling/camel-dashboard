@@ -4,11 +4,13 @@ linkTitle: "Camel Dashboard"
 description: "Lightweight monitoring tool for Apache Camel applications on Kubernetes and OpenShift. Real-time route tracking, performance metrics, and visual dashboards for your Camel integrations."
 ---
 
-{{< blocks/cover title="Camel Dashboard" image_anchor="top" height="full" >}}
-<div class="mx-auto">
-	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
-		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
-	</a>
+{{< blocks/cover title="Camel Dashboard" image_anchor="center" height="min" logo_anchor="center">}}
+<div class="mx-auto text-center">
+	<div>
+		<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
+			Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+		</a>
+	</div>
 	<p class="lead mt-5">Monitor your fleet of Camel applications on Kubernetes</p>
 </div>
 
