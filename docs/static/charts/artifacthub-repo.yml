@@ -11,5 +11,7 @@
 #
 repositoryID: 9b139493-13a1-4f08-92be-5d7edb55fd6a
 owners: # (optional, used to claim repository ownership)
+  - name: gfournier
+    email: gfournier@apache.org
   - name: gansheer
     email: gaelle.fournier.work@gmail.com
