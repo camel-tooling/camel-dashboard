@@ -109,6 +109,50 @@ entries:
     urls:
     - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-console-0.1.0.tgz
     version: 0.1.0
+  camel-dashboard-openshift-all:
+  - apiVersion: v2
+    created: "2026-02-05T08:55:04.165342794Z"
+    dependencies:
+    - condition: camel-dashboard-operator.enabled
+      name: camel-dashboard-operator
+      repository: https://camel-tooling.github.io/camel-dashboard/charts
+      version: 0.1.0
+    - condition: camel-dashboard-console.enabled
+      name: camel-dashboard-console
+      repository: https://camel-tooling.github.io/camel-dashboard/charts
+      version: 0.2.2
+    - condition: hawtio-online-console-plugin.enabled
+      name: hawtio-online-console-plugin
+      repository: https://hawtio.github.io/hawtio-charts
+      version: 0.6.2
+    description: Helm umbrella chart for Camel Dashboard on OpenShift
+    digest: 4371c1f1d093129c6254396985b2289e46c25cda0553de29b1632904334718d5
+    home: https://camel-tooling.github.io/camel-dashboard/
+    icon: https://raw.githubusercontent.com/camel-tooling/camel-dashboard-openshift-all/refs/heads/main/icons/logo.png
+    keywords:
+    - camel
+    - dashboard
+    - operator
+    - console
+    - integration
+    - hawtio
+    - jolokia
+    - jmx
+    - openshift
+    kubeVersion: "1.32"
+    maintainers:
+    - email: gfournier@apache.org
+      name: gfournier
+    name: camel-dashboard-openshift-all
+    sources:
+    - https://github.com/camel-tooling/camel-dashboard
+    - https://github.com/camel-tooling/camel-dashboard-operator
+    - https://github.com/camel-tooling/camel-dashboard-console
+    - https://github.com/hawtio/hawtio-online
+    type: application
+    urls:
+    - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-openshift-all-4.19.0.tgz
+    version: 4.19.0
   camel-dashboard-operator:
   - apiVersion: v2
     appVersion: 0.1.0
@@ -152,4 +196,4 @@ entries:
     urls:
     - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-operator-0.0.1.tgz
     version: 0.0.1
-generated: "2026-01-14T17:13:22.722475875Z"
+generated: "2026-02-05T08:55:04.161532657Z"
