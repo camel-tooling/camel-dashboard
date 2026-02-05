@@ -75,13 +75,15 @@ enableGitInfo = true
   
   # UI configuration
   [params.ui]
-    sidebar_menu_compact = false
+    sidebar_menu_compact = true
+    sidebar_menu_foldable = true
     sidebar_search_disable = false
     breadcrumb_disable = false
     taxonomy_breadcrumb_disable = false
     navbar_logo = true
     footer_about_enable = true
     rss_sections = ["blog"]
+    
     
   # Links for header and footer
     
