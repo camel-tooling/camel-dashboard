@@ -42,7 +42,7 @@ jobs:
         shell: bash
         run: |
           cd camel-dashboard-openshift-all
-          make CUSTOM_VERSION=${{ inputs.version }} release-helm
+          make CUSTOM_VERSION=${{ inputs.version }} helm-release
           ls . | grep camel-dashboard-openshift-all
 
       - name: Create branch with helm chart
