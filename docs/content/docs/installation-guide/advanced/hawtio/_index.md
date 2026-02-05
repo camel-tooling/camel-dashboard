@@ -14,12 +14,13 @@ resources:
 
 [HawtIO Console Plugin for Openshift](https://github.com/hawtio/hawtio-online-console-plugin?tab=readme-ov-file#hawtio-online-openshift-console-plugin) is a dynamic plugin that integrates the Hawtio Online console into the OpenShift console.
 
+> WARNING: If you installed the camel-dashboard-openshift-all helm chart you need to prefix any configuration in helm chart values by `hawtio-online-console-plugin.`
+
 ## Installation
 
 A [Helm](https://helm.sh) chart is available to deploy the HawtIO Console Plugin to an OpenShift environment.
 
 See the HawtIO Console Plugin [installation documentation](https://github.com/hawtio/hawtio-charts?tab=readme-ov-file#hawtio-console-plugin-for-openshift).
-
 
 ## Overview
 
