@@ -10,7 +10,7 @@ images: ["/camel-dashboard/images/blog/camels_blog_2.jpg"]
 
 ![Camel Dashboard deployment made simple with the new all-in-one Helm chart for OpenShift](/camel-dashboard/images/blog/camels_blog_2.jpg)
 
-We're excited to announce the release of **`camel-dashboard-openshift-all`**, a new umbrella Helm chart that dramatically simplifies the deployment of Camel Dashboard on OpenShift clusters.
+We're excited to announce the release of [**`camel-dashboard-openshift-all`**](https://artifacthub.io/packages/helm/camel-dashboard/camel-dashboard-openshift-all), a new umbrella Helm chart that dramatically simplifies the deployment of Camel Dashboard on OpenShift clusters.
 
 ## What's Included
 
