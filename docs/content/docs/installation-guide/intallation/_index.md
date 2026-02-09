@@ -45,7 +45,7 @@ helm install camel-dashboard-openshift-all camel-dashboard/camel-dashboard-opens
 
 By default all component will be deployed. You can choose to not deploy one or more components. Add the following to you helm install command:
 
-* Camel Dashboard Operator: `--set camel-dashboard-operator=false`
+* Camel Dashboard Operator: `--set camel-dashboard-operator.enabled=false`
 * Camel Dashboard Console: `--set camel-dashboard-console.enabled=false`
 * Hawtio Online Console Plugin: `--set hawtio-online-console-plugin.enabled=false`
 
