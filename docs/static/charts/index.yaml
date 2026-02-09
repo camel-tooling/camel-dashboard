@@ -111,7 +111,7 @@ entries:
     version: 0.1.0
   camel-dashboard-openshift-all:
   - apiVersion: v2
-    created: "2026-02-05T11:04:59.764418012Z"
+    created: "2026-02-09T10:08:59.764418012Z"
     dependencies:
     - condition: camel-dashboard-operator.enabled
       name: camel-dashboard-operator
@@ -154,7 +154,7 @@ entries:
     - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-openshift-all-4.20.0.tgz
     version: 4.20.0
   - apiVersion: v2
-    created: "2026-02-05T09:31:55.970307003Z"
+    created: "2026-02-09T10:08:55.970307003Z"
     dependencies:
     - condition: camel-dashboard-operator.enabled
       name: camel-dashboard-operator
@@ -239,4 +239,4 @@ entries:
     urls:
     - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-operator-0.0.1.tgz
     version: 0.0.1
-generated: "2026-02-05T11:04:59.760568796Z"
+generated: "2026-02-09T10:08:59.760568796Z"
