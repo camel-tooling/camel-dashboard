@@ -28,8 +28,8 @@ Below you can find the compatibility list for its dependencies:
 
 | Camel Dashboard Console | Openshift          | Camel Dashboard Operator |
 | ----------------------- | ------------------ | ------------------------ |
-| next (0.3.2)            | Openshift 4.20+    | 0.1.0                    |
-| 0.3.1                   | Openshift 4.20+    | 0.1.0                    |
+| next (0.3.3)            | Openshift 4.20+    | 0.1.0                    |
+| 0.3.2                   | Openshift 4.20+    | 0.1.0                    |
 | 0.2.2                   | Openshift 4.19     | 0.1.0                    |
 | 0.1.0                   | Openshift 4.18     | 0.0.1                    |
 
@@ -55,10 +55,10 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 Install *Camel Dashboard* using the helm [install](https://helm.sh/docs/helm/helm_install/) command:
 
 ```bash
-helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console --version 0.3.1 --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.3.1
+helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console --version 0.3.2 --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.3.2
 ```
 
-> NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.3.1`) from the previous script accordingly.
+> NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.3.2`) from the previous script accordingly.
 
 ## Overview
 
