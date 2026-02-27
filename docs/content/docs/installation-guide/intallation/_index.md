@@ -38,7 +38,7 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 Install *Camel Dashboard* using the helm [install](https://helm.sh/docs/helm/helm_install/) command:
 
 ```bash
-helm install camel-dashboard-openshift-all camel-dashboard/camel-dashboard-openshift-all --version 4.19.0 -n camel-dashboard --create-namespace
+helm install camel-dashboard-openshift-all camel-dashboard/camel-dashboard-openshift-all --version 4.20.1 -n camel-dashboard --create-namespace
 ```
 
 ## Configuration
