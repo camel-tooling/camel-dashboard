@@ -32,7 +32,7 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 ```bash
 $ helm repo list
 
-NAME    URL                                   
+NAME    URL
 camel-tooling	https://camel-tooling.github.io/camel-dashboard/charts/
 ```
 
@@ -123,3 +123,17 @@ You can setup the environment variables `OBSERVABILITY_PORT` with the number of 
 #### Application level
 
 You can add an annotation to the `Deployment` resource, `camel.apache.org/observability-services-port` with the value expected for that specific application only.
+
+### Include Prometheus PodMonitor
+
+The presence of `camel-observability-services` leverages Micrometer Prometheus technology. The exposure of the metrics endpoint enables the possibility for the operator to include the custom resource expected by Prometheus operator automatically. The operator is able to detect the presence of such capability on the cluster, and, by default, include a `PodMonitor` associated with the Camel application monitored by the dashboard.
+
+Such a `PodMonitor` can be eventually used by the final user for more [advanced monitoring activities](https://prometheus-operator.dev/docs/developer/getting-started/#using-podmonitors).
+
+#### Operator level
+
+You can setup the environment variables `CREATE_POD_MONITOR` (by default it is enabled). It must be `true` to enable the creation of the Prometheus custom resource. Remove the variable or set to any other value to disable the feature.
+
+#### Application level
+
+Not available at the moment. Feel free to open a change request to enable this in future releases.
