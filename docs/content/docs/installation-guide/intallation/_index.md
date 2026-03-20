@@ -7,6 +7,10 @@ aliases:
   - /docs/installation-guide/console/installation/
   - /docs/installation-guide/console/
   - /docs/installation-guide/hawtio/
+resources:
+- src: "**ocp-catalog-installation*.png"
+  params:
+    byline: "Camel Dashboard installation from Openshift Catalog"
 ---
 
 
@@ -38,8 +42,13 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 Install *Camel Dashboard* using the helm [install](https://helm.sh/docs/helm/helm_install/) command:
 
 ```bash
-helm install camel-dashboard-openshift-all camel-dashboard/camel-dashboard-openshift-all --version 4.20.2 -n camel-dashboard --create-namespace
+helm install camel-dashboard-openshift-all camel-dashboard/camel-dashboard-openshift-all --version 4.21.1 -n camel-dashboard --create-namespace
 ```
+
+Alternatively you can install Camel Dashboard from the Openshift Catalog:
+
+{{% imgproc ocp-421-catalog-installation Resize "1935x1001" %}}
+{{% /imgproc %}}
 
 ## Configuration
 
