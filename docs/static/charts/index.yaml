@@ -4,6 +4,32 @@ entries:
   - annotations:
       charts.openshift.io/name: Camel Dashboard OpenShift Console plugin
     apiVersion: v2
+    appVersion: 0.4.0
+    created: "2026-03-20T14:58:42.166383898Z"
+    description: A Helm chart for installing the Camel Dashboard OpenShift Console
+      plugin
+    digest: aac0dbed09fc7c8122ea1efd709ad47cae936c30eb25289fec407bba79a4acbf
+    home: https://camel-tooling.github.io/camel-dashboard/
+    icon: https://github.com/camel-tooling/camel-dashboard/raw/main/docs/static/images/logo.png
+    keywords:
+    - camel
+    - dashboard
+    - console
+    - react
+    kubeVersion: '>= 1.34'
+    maintainers:
+    - email: gfournier@apache.org
+      name: gansheer
+    name: camel-dashboard-console
+    sources:
+    - https://github.com/camel-tooling/camel-dashboard-console.git
+    type: application
+    urls:
+    - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-console-0.4.0.tgz
+    version: 0.4.0
+  - annotations:
+      charts.openshift.io/name: Camel Dashboard OpenShift Console plugin
+    apiVersion: v2
     appVersion: 0.3.2
     created: "2026-02-11T14:35:09.148038635Z"
     description: A Helm chart for installing the Camel Dashboard OpenShift Console
@@ -396,4 +422,4 @@ entries:
     urls:
     - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-operator-0.0.1.tgz
     version: 0.0.1
-generated: "2026-03-03T16:39:47.259895966Z"
+generated: "2026-03-20T14:58:42.165692247Z"
