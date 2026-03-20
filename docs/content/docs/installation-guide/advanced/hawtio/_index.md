@@ -8,6 +8,9 @@ resources:
 - src: "**oc-hawtio-online-420*.png"
   params:
     byline: "HawtIO Console Plugin for Openshift"
+- src: "**ocp-hawtiotab-421*.png"
+  params:
+    byline: "HawtIO Console Plugin for Openshift"
 ---
 
 [HawtIO](https://hawt.io/) is a powerful pluggable Web management console that provides its build-in plugin that supports Apache Camel.
@@ -32,4 +35,9 @@ It is directly accessible from the **Camel Dashboard Console** for any Camel App
 {{% /imgproc %}}
 
 {{% imgproc oc-hawtio-online-420 Resize "1935x1001" %}}
+{{% /imgproc %}}
+
+Starting from Openshift 4.21 Camel Dashboard detail view shows additional HawtIO tab:
+
+{{% imgproc ocp-hawtiotab-421 Resize "1935x1001" %}}
 {{% /imgproc %}}
