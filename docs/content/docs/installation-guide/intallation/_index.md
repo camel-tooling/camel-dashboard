@@ -12,7 +12,7 @@ aliases:
 
 A [Helm](https://helm.sh) chart is available to deploy the full Camel Dashoard to an OpenShift environment:
 
-* Camel Dashboard Operator: Manages Camel Dashboard instances
+* Camel Monitor Operator: Manages Camel Monitor operator instances
 * Camel Dashboard Console: OpenShift Console plugin for Camel Dashboard
 * Hawtio Online Console Plugin: Management and monitoring console for Java applications
 
@@ -45,7 +45,7 @@ helm install camel-dashboard-openshift-all camel-dashboard/camel-dashboard-opens
 
 By default all component will be deployed. You can choose to not deploy one or more components. Add the following to you helm install command:
 
-* Camel Dashboard Operator: `--set camel-dashboard-operator.enabled=false`
+* Camel Monitor Operator: `--set camel-monitor-operator.enabled=false`
 * Camel Dashboard Console: `--set camel-dashboard-console.enabled=false`
 * Hawtio Online Console Plugin: `--set hawtio-online-console-plugin.enabled=false`
 

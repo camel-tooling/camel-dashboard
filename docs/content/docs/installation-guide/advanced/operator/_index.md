@@ -1,12 +1,12 @@
 ---
-title: "Camel Dashboard Operator"
-linkTitle: "Camel Dashboard Operator"
+title: "Camel Monitor Operator"
+linkTitle: "Camel Monitor Operator"
 weight: 30
 aliases:
   - /docs/installation-guide/operator/configuration/
 ---
 
-The **Camel Dashboard Operator** is a project created to simplify the management of any Camel application on a Kubernetes cluster. The tool is in charge to **monitor any Camel application** and provide a set of basic information, useful to learn how your fleet of Camel (a caravan!?) is behaving.
+The **Camel Monitor Operator** is a project created to simplify the management of any Camel application on a Kubernetes cluster. The tool is in charge to **monitor any Camel application** and provide a set of basic information, useful to learn how your fleet of Camel (a caravan!?) is behaving.
 
 The project is designed to be as simple and low resource consumption as possible. It only collects the most important Camel application KPI in order to quickly identify what's going on across your Camel applications.
 
@@ -32,7 +32,7 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 ```bash
 $ helm repo list
 
-NAME    URL                                   
+NAME    URL
 camel-tooling	https://camel-tooling.github.io/camel-dashboard/charts/
 ```
 
