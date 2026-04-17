@@ -22,11 +22,11 @@ This operator can work standalone and you can use the data exposed in the `Camel
 
 ## Camel Dashboard Console dependencies matrix
 
-The Camel Dashboard Console is a plugin extension of OpenShift Console exposing the data from the Camel Dashboard Operator.
+The Camel Dashboard Console is a plugin extension of OpenShift Console exposing the data from the Camel Monitor Operator.
 
 Below you can find the compatibility list for its dependencies:
 
-| Camel Dashboard Console | Openshift          | Camel Dashboard Operator |
+| Camel Dashboard Console | Openshift          | Camel Monitor Operator |
 | ----------------------- | ------------------ | ------------------------ |
 | next (0.4.2)            | Openshift 4.21+    | 0.1.0                    |
 | 0.4.1                   | Openshift 4.21+    | 0.1.0                    |
@@ -48,7 +48,7 @@ The following Helm parameters are required:
 
 Additional parameters can be specified if desired. Consult the chart values file for the full set of supported parameters.
 
-First, add the chart repository to the local helm [configuration](https://helm.sh/docs/helm/helm_repo_add/) (you might have already done it if you installed the [Camel Dashboard Operator](/camel-dashboard/docs/operator)):
+First, add the chart repository to the local helm [configuration](https://helm.sh/docs/helm/helm_repo_add/) (you might have already done it if you installed the [Camel Monitor Operator](/camel-dashboard/docs/operator)):
 ```bash
 $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/charts
 ```

@@ -6,7 +6,7 @@ weight: 20
 
 Let's install Camel Dashboard, which consists of two main components:
 
-* **Camel Dashboard Operator** - Monitors Camel applications on Kubernetes and collects metrics
+* **Camel Monitor Operator** - Monitors Camel applications on Kubernetes and collects metrics
 * **Camel Dashboard Console** - OpenShift Console plugin providing visual representation of the operator data
 
 Additionally, you can enhance your monitoring capabilities with:

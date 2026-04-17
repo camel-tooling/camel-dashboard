@@ -53,7 +53,7 @@ enableGitInfo = true
   [params.og]
     type = "website"
     site_name = "Camel Dashboard"
-  
+
   # Custom CSS for Camel branding (Docsy style)
   [params.links]
   [[params.links.user]]
@@ -61,18 +61,18 @@ enableGitInfo = true
     url = "https://github.com/camel-tooling/camel-dashboard"
     icon = "fab fa-github"
     desc = "GitHub repository"
-  
-    
+
+
   # Project information
   copyright = "Apache Software Foundation"
   privacy_policy = ""
-  
+
   # Menu and navigation
   version_menu = "Releases"
   archived_version = false
   version = "main"
   url_latest_version = ""
-  
+
   # UI configuration
   [params.ui]
     sidebar_menu_compact = true
@@ -83,15 +83,15 @@ enableGitInfo = true
     navbar_logo = true
     footer_about_enable = true
     rss_sections = ["blog"]
-    
-    
+
+
   # Links for header and footer
-    
+
   [[params.links.developer]]
-    name = "GitHub Camel Dashboard Operator"
-    url = "https://github.com/camel-tooling/camel-dashboard-operator"
+    name = "GitHub Camel Monitor Operator"
+    url = "https://github.com/camel-tooling/camel-monitor-operator"
     icon = "fab fa-github"
-    desc = "GitHub repository for Camel Dashboard Operator"
+    desc = "GitHub repository for Camel Monitor Operator"
 
   [[params.links.developer]]
     name = "GitHub Camel Dashboard Console"

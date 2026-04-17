@@ -15,7 +15,7 @@ We're excited to announce the release of [**`camel-dashboard-openshift-all`**](h
 ## What's Included
 
 Previously, deploying Camel Dashboard required installing multiple components separately:
-- **Camel Dashboard Operator**: Manages Camel Dashboard instances
+- **Camel Monitor Operator**: Manages Camel Monitor operator instances
 - **Camel Dashboard Console**: OpenShift Console plugin for monitoring
 - **Hawtio Online Console Plugin**: Optional management console for Java applications
 
