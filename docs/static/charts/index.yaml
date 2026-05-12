@@ -538,4 +538,30 @@ entries:
     urls:
     - https://camel-tooling.github.io/camel-dashboard/charts/camel-dashboard-operator-0.0.1.tgz
     version: 0.0.1
-generated: "2026-03-27T16:00:09.983892022Z"
+  camel-monitor-operator:
+  - annotations:
+      charts.openshift.io/name: Camel Monitor Operator
+    apiVersion: v2
+    appVersion: 0.2.0
+    created: "2026-05-12T10:08:26.427412983Z"
+    description: A Helm chart for installing the Camel Monitor Operator
+    digest: 959385a36c63ea665a9aef3dfabf4abaf56ead5795000782b166c317e1bc6d0a
+    home: https://camel-tooling.github.io/camel-dashboard/
+    icon: https://github.com/camel-tooling/camel-dashboard/raw/main/docs/static/images/logo.png
+    keywords:
+    - integration
+    - camel
+    - monitor
+    - dashboard
+    kubeVersion: '>= 1.33'
+    maintainers:
+    - email: pcongiusti@apache.org
+      name: pcongiusti
+    name: camel-monitor-operator
+    sources:
+    - https://github.com/camel-tooling/camel-monitor-operator
+    type: application
+    urls:
+    - https://camel-tooling.github.io/camel-dashboard/charts/camel-monitor-operator-0.2.0.tgz
+    version: 0.2.0
+generated: "2026-05-12T10:08:26.426817823Z"
