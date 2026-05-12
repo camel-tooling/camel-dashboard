@@ -6,7 +6,7 @@ on:
       ref:
         type: string
         required: true
-        description: branch/tag/etc from camel-dashboard-operator to release
+        description: branch/tag/etc from camel-monitor-operator to release
       version:
         type: string
         required: true
@@ -31,8 +31,8 @@ jobs:
       - name: Checkout charts repo
         uses: actions/checkout@v5
         with:
-          repository: camel-tooling/camel-dashboard-operator
-          path: camel-dashboard-operator
+          repository: camel-tooling/camel-monitor-operator
+          path: camel-monitor-operator
           ref: "${{ inputs.ref }}"
 
       - name: Install Helm
@@ -41,7 +41,7 @@ jobs:
       - name: Build charts
         shell: bash
         run: |
-          cd camel-dashboard-operator
+          cd camel-monitor-operator
           mkdir -p docs/charts
           make CUSTOM_VERSION=${{ inputs.version }} release-helm
           ls docs/charts
@@ -51,7 +51,7 @@ jobs:
         run: |
           cd main
           mkdir -p docs/static/charts/${{ inputs.version }}
-          cp ../camel-dashboard-operator/docs/charts/camel-dashboard-operator-${{ inputs.version }}.tgz docs/static/charts/${{ inputs.version }}/camel-dashboard-operator-${{ inputs.version }}.tgz
+          cp ../camel-monitor-operator/docs/charts/camel-monitor-operator-${{ inputs.version }}.tgz docs/static/charts/${{ inputs.version }}/camel-monitor-operator-${{ inputs.version }}.tgz
           cd docs/static/charts
           helm repo index ${{ github.workspace }}/main/docs/static/charts/${{ inputs.version }} --url https://camel-tooling.github.io/camel-dashboard/charts/ --merge ${{ github.workspace }}/main/docs/static/charts/index.yaml
           mv ${{ inputs.version }}/* ${{ inputs.version }}/../.
@@ -60,23 +60,23 @@ jobs:
           git config --global user.email "${{ github.actor_id }}+${GITHUB_ACTOR}@users.noreply.github.com"
           git add ./docs/static/charts/camel-dashboard-operator-${{ inputs.version }}.tgz
           git add ./docs/static/charts/index.yaml
-      
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
           path: main
           token: ${{ secrets.PAT }}
-          commit-message: "chore: Release helm chart camel-dashboard-operator ${{ inputs.version }}"
+          commit-message: "chore: Release helm chart camel-monitor-operator ${{ inputs.version }}"
           committer: github-actions[bot] <${GITHUB_ACTOR}@users.noreply.github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           base: main
           branch: camel-dashboard-helm-charts-${{ inputs.version }}-${{ github.run_id }}-${{ github.run_attempt }}
           signoff: false
           draft: false
-          title: 'chore: Release helm chart camel-dashboard-operator ${{ inputs.version }}'
+          title: 'chore: Release helm chart camel-monitor-operator ${{ inputs.version }}'
           body: |
-            Helm chart from camel-tooling/camel-dashboard-operator repository:
+            Helm chart from camel-tooling/camel-monitor-operator repository:
             - version ${{ inputs.version }}
             - ref ${{ inputs.ref }}
 
