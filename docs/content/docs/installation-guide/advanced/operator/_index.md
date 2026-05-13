@@ -12,11 +12,11 @@ The project is designed to be as simple and low resource consumption as possible
 
 > NOTE: as the project is still in an experimental phase, the metrics collected can be changed at each development iteration.
 
-> WARNING: If you installed the camel-dashboard-openshift-all helm chart you need to prefix any configuration in helm chart values by `camel-dashboard-operator.`
+> WARNING: If you installed the camel-dashboard-openshift-all helm chart you need to prefix any configuration in helm chart values by `camel-monitor-operator.`
 
 ## The Camel custom resource
 
-The operator uses a simple custom resource known as `CamelApp` or `capp` which stores certain metrics around your running applications. The operator detects the Camel applications you’re deploying to the cluster, identifying them in a given namespace or a given metadata label that need to be included when deploying your applications (all configurable on the operator side).
+The operator uses a simple custom resource known as `CamelMonitor` or `cmon` which stores certain metrics around your running applications. The operator detects the Camel applications you’re deploying to the cluster, identifying them in a given namespace or a given metadata label that need to be included when deploying your applications (all configurable on the operator side).
 
 ## Installation
 
@@ -33,22 +33,20 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 $ helm repo list
 
 NAME    URL
-camel-tooling	https://camel-tooling.github.io/camel-dashboard/charts/
+camel-dashboard	https://camel-tooling.github.io/camel-dashboard/charts/
 ```
 
 * Install the *operator* using the helm [install](https://helm.sh/docs/helm/helm_install/) command:
 ```bash
-$ helm install camel-dashboard-operator camel-dashboard/camel-dashboard-operator --version 0.1.0 -n camel-dashboard --set operator.image=quay.io/camel-tooling/camel-dashboard-operator:0.1.0
+$ helm install camel-monitor-operator camel-dashboard/camel-monitor-operator -n camel-dashboard
 ```
-
-> NOTE: The installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.1.0`) from the previous script accordingly.
 
 You can check if the operator is running:
 
 ```bash
 $ kubectl get pods -n camel-dashboard
 NAME                                        READY   STATUS    RESTARTS   AGE
-camel-dashboard-operator-7c6bcf5576-fwn7s   1/1     Running   0          4m18s
+camel-monitor-operator-7c6bcf5576-fwn7s   1/1     Running   0          4m18s
 ```
 
 ## Configuration
@@ -57,7 +55,7 @@ There are several configuration you can apply separately to each of your Camel a
 
 ### Camel Application discovery
 
-The operator is instructed to watch `Deployment` and verify if they are marked as Camel application. You will likely need to update your deployment process and include automatically a `camel.apache.org/app` label for all the applications you want to monitor.
+The operator is instructed to watch `Deployment` and verify if they are marked as Camel application. You will likely need to update your deployment process and include automatically a `camel.apache.org/monitor` label for all the applications you want to monitor.
 
 NOTE: you can configure the operator to watch for a different label setting the environment variable `LABEL_SELECTOR` in the operator Pod.
 
@@ -69,24 +67,23 @@ It will works also when no services are exposed, but it won't be able to collect
 
 ### Camel annotations synchronization
 
-As you will discover in the configuraton chapter, you can provide specific configuration for each `CamelApp`. In order to keep the operator in synch with any deployment tool, you should therefore annotate the backing deployment object (ie, the `Deployment`) with such specific configuration. The operator will automatically synchronize any annotation prefixed with `camel.apache.org`.
+As you will discover in the configuration chapter, you can provide specific configuration for each `CamelMonitor`. In order to keep the operator in synch with any deployment tool, you should therefore annotate the backing deployment object (ie, the `Deployment`) with such specific configuration. The operator will automatically synchronize any annotation prefixed with `camel.apache.org`.
 
 ### Configure the metrics polling
 
 You can watch the metrics evolving as long as the application is running, for example via `-w` parameter:
 
 ```bash
-$ kubectl get camelapps -w
+$ kubectl get camelmonitorss -w
 
-NAME                PHASE     LAST EXCHANGE   EXCHANGE SLI   IMAGE                                  REPLICAS   INFO
+NAME              INFO                                           PHASE    REPLICAS   HEALTHY   MONITORED   MEMORY PRESSURE   CPU PRESSURE   EXCHANGE SLI   LAST EXCHANGE
+camel-app-413     Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT)       Running  1          true      true        False             False          OK             2m42s
+camel-app-sb      Spring-Boot - 3.4.3 (4.11.0)                   Running  1          false     true        False             False          Error
+camel-app-quarkus Quarkus - 3.33.1 (4.17.0)                      Running  1          true      true        False             True           Warning        1m30s
 ...
-camel-app-413       Running   8m32s           OK             squakez/cdb:4.13                       1          Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT)
-camel-app-main      Running                   OK             docker.io/squakez/db-app-main:1.0      1          Main - 4.11.0 (4.11.0)
-camel-app-quarkus   Running                   Warning        docker.io/squakez/db-app-quarkus:1.0   1
-camel-app-sb        Running                   Error          docker.io/squakez/db-app-sb:1.0        1          Spring-Boot - 3.4.3 (4.11.0)
 ```
 
-The `CamelApp` are polled every minute by default. It should be enough in most cases, as the project is really a dashboard and not a proper monitoring tool. However, you can change this configuration if you want a more or less reactive polling. You can configure this value both at operator level (which would affect all the applications) or at single application level.
+The `CamelMonitors` are polled every minute by default. It should be enough in most cases, as the project is meant to be a lightweight monitoring tool. However, you can change this configuration if you want a more or less reactive polling. You can configure this value both at operator level (which would affect all the applications) or at single application level.
 
 #### Operator level
 
