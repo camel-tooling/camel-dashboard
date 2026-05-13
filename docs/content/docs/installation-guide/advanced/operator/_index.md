@@ -74,7 +74,7 @@ As you will discover in the configuration chapter, you can provide specific conf
 You can watch the metrics evolving as long as the application is running, for example via `-w` parameter:
 
 ```bash
-$ kubectl get camelmonitorss -w
+$ kubectl get camelmonitors -w
 
 NAME              INFO                                           PHASE    REPLICAS   HEALTHY   MONITORED   MEMORY PRESSURE   CPU PRESSURE   EXCHANGE SLI   LAST EXCHANGE
 camel-app-413     Main - 4.13.0-SNAPSHOT (4.13.0-SNAPSHOT)       Running  1          true      true        False             False          OK             2m42s
