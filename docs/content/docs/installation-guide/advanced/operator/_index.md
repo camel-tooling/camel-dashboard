@@ -20,6 +20,10 @@ The operator uses a simple custom resource known as `CamelMonitor` or `cmon` whi
 
 ## Installation
 
+We offer different installation methodologies: Helm, Kustomize (via `kubectl`) and OLM.
+
+### Helm
+
 You can use [Helm](https://helm.sh) to install the operator resources. You can install it in any namespace (we conventionally use `camel-dashboard` namespace, which, has to be created previously). The default configuration is for a cluster scoped operator (use `--set operator.global="false"` for a namespace scoped operator).
 
 
@@ -49,6 +53,29 @@ NAME                                        READY   STATUS    RESTARTS   AGE
 camel-monitor-operator-7c6bcf5576-fwn7s   1/1     Running   0          4m18s
 ```
 
+### Kustomize
+
+[Kustomize](https://kustomize.io/) provides a declarative approach to the configuration customization of a Camel Monitor Operator installation. Kustomize works either with a standalone executable or as a built-in to `kubectl`. The `/install` directory provides a series of base and overlays configuration that you can use. You can create your own overlays or customize the one available in the repository to accommodate your need.
+
+```bash
+$ kubectl create ns camel-monitor
+$ kubectl apply -k github.com/camel-tooling/camel-monitor-operator/install/overlays/kubernetes/descoped?ref=v0.2.0 --server-side
+```
+
+You can specify as ref parameter the version you’re willing to install (ie, v0.2.0). The command above will install a descoped (global) operator in the `camel-monitor` namespace. This is the suggested configuration in order to manage `CamelMonitors` in all namespaces.
+
+### OLM
+
+Camel Monitor is also available in Operator Hub. You will need the OLM framework to be properly installed in your cluster.
+
+```bash
+$ kubectl create -f https://operatorhub.io/install/camel-monitor-operator.yaml
+```
+
+You can edit the Subscription custom resource, setting the channel you want to use. We provide an installation channel for `latest` and each major version we’re releasing (ie, `stable-v0`). This will simplify the upgrade process if you choose to perform an automatic upgrade.
+
+> NOTE: some Kubernetes clusters such as Openshift may let you to perform the same operation from a GUI as well. Refer to the cluster instruction to learn how to perform such action from user interface.
+
 ## Configuration
 
 There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
@@ -57,7 +84,7 @@ There are several configuration you can apply separately to each of your Camel a
 
 The operator is instructed to watch `Deployment` and verify if they are marked as Camel application. You will likely need to update your deployment process and include automatically a `camel.apache.org/monitor` label for all the applications you want to monitor.
 
-NOTE: you can configure the operator to watch for a different label setting the environment variable `LABEL_SELECTOR` in the operator Pod.
+> NOTE: you can configure the operator to watch for a different label setting the environment variable `LABEL_SELECTOR` in the operator Pod.
 
 ### Collect Camel metrics
 
