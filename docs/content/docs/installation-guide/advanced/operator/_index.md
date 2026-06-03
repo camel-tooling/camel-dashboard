@@ -59,10 +59,10 @@ camel-monitor-operator-7c6bcf5576-fwn7s   1/1     Running   0          4m18s
 
 ```bash
 $ kubectl create ns camel-monitor
-$ kubectl apply -k github.com/camel-tooling/camel-monitor-operator/install/overlays/kubernetes/descoped?ref=v0.2.0 --server-side
+$ kubectl apply -k github.com/camel-tooling/camel-monitor-operator/install/overlays/kubernetes/descoped?ref=v0.2.1 --server-side
 ```
 
-You can specify as ref parameter the version you’re willing to install (ie, v0.2.0). The command above will install a descoped (global) operator in the `camel-monitor` namespace. This is the suggested configuration in order to manage `CamelMonitors` in all namespaces.
+You can specify as ref parameter the version you’re willing to install (ie, v0.2.1). The command above will install a descoped (global) operator in the `camel-monitor` namespace. This is the suggested configuration in order to manage `CamelMonitors` in all namespaces.
 
 ### OLM
 
