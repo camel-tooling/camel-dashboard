@@ -11,7 +11,7 @@ draft: false
 
 ![Camel Dashboard monitoring interface](/camel-dashboard/images/blog/camels_blog_4.jpg)
 
-We're excited to announce the June 2026 releases of Camel Dashboard components, bringing important updates and improvements across the stack.
+We're happy to announce the new release of Camel Dashboard components, bringing important updates and improvements across the stack.
 
 ## What's New
 
