@@ -7,9 +7,12 @@ resources:
 - src: "**oc-console-list-420*.png"
   params:
     byline: "Camel Applications"
-- src: "**oc-console-detail-420*.png"
+- src: "**oc-console-detail-1-421*.png"
   params:
-    byline: "Camel Application > Details"
+    byline: "Camel Application > Details 1"
+- src: "**oc-console-detail-2-421*.png"
+  params:
+    byline: "Camel Application > Details 2"
 - src: "**oc-console-detail-resources-420*.png"
   params:
     byline: "Camel Application > Resources"
@@ -18,7 +21,7 @@ resources:
     byline: "Camel Application > Metrics"
 ---
 
-This operator can work standalone and you can use the data exposed in the `CamelApp` custom resource accordingly. However it has a great fit with the [Camel Dashboard Console](https://github.com/camel-tooling/camel-dashboard-console?tab=readme-ov-file#deployment-to-openshift), which is a visual representation of the services exposed by the operator.
+This operator can work standalone and you can use the data exposed in the `CamelMonitor` custom resource accordingly. However it has a great fit with the [Camel Dashboard Console](https://github.com/camel-tooling/camel-dashboard-console?tab=readme-ov-file#deployment-to-openshift), which is a visual representation of the services exposed by the operator.
 
 ## Camel Dashboard Console dependencies matrix
 
@@ -28,13 +31,14 @@ Below you can find the compatibility list for its dependencies:
 
 | Camel Dashboard Console | Openshift          | Camel Monitor Operator |
 | ----------------------- | ------------------ | ------------------------ |
-| next (0.4.2)            | Openshift 4.21+    | 0.1.0                    |
+| next (0.5.1)            | Openshift 4.21+    | 0.2.1                    |
+| 0.5.0                   | Openshift 4.21+    | 0.2.1                    |
 | 0.4.1                   | Openshift 4.21+    | 0.1.0                    |
 | 0.3.2                   | Openshift 4.20     | 0.1.0                    |
 | 0.2.2                   | Openshift 4.19     | 0.1.0                    |
 | 0.1.0                   | Openshift 4.18     | 0.0.1                    |
 
-NOTE: the old version 0.1.0 uses the old `App` custom resource.
+NOTE: the old version 0.1.0 uses the old `CamelApp` custom resource.
 
 > WARNING: If you installed the camel-dashboard-openshift-all helm chart you need to prefix any configuration in helm chart values by `camel-dashboard-console.`
 
@@ -56,10 +60,10 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 Install *Camel Dashboard* using the helm [install](https://helm.sh/docs/helm/helm_install/) command:
 
 ```bash
-helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console --version 0.4.1 --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.4.1
+helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console --version 0.5.0 --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.5.0
 ```
 
-> NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.4.1`) from the previous script accordingly.
+> NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.5.0`) from the previous script accordingly.
 
 ## Overview
 
@@ -73,9 +77,10 @@ Once installed, the **Camel Dashboard Console** features should be accessible in
 
     * informations from the Observability Services
 
-{{% imgproc oc-console-detail-420 Resize "1935x1001" %}}
+{{% imgproc oc-console-detail-1-421 Resize "1798x1029" %}}
 {{% /imgproc %}}
-
+{{% imgproc oc-console-detail-2-421 Resize "1798x1029" %}}
+{{% /imgproc %}}
    * Kubernetes native resources linked to the deployment, with some acces to logs, hawtio console, etc
 
 {{% imgproc oc-console-detail-resources-420 Resize "1935x1001" %}}
