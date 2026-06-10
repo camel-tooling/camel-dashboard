@@ -76,6 +76,21 @@ You can edit the Subscription custom resource, setting the channel you want to u
 
 > NOTE: some Kubernetes clusters such as Openshift may let you to perform the same operation from a GUI as well. Refer to the cluster instruction to learn how to perform such action from user interface.
 
+### Installation topologies
+
+When you decide to install the operator, you can decide to install the following topology:
+
+* Global operator: a single global operator watching all namespaces.
+* Own namespace operator: a namespaces operator watching its own namespace only.
+* Single namespace operator: an operator installed in a namespace and watching another namespace.
+* Multi namespace operator: an operator installed in a namespace and watching multiple namespaces.
+
+The namespace(s) to watch is configured via `WATCH_NAMESPACE` variable in the operator `Deployment` resource. You can provide an empty value (watch all namespaces), a single value (watch either the own namespace or any other namespace) or a comma separated value (watching as many namespaces as provided).
+
+It's important to notice that when running the single or multiple namespace operator, you will need to provide the RBACs which are expected by the operator to run properly. For such a configuration you can take as a reference the `Kustomize` examples available in `/install/overlays/single-namespace/` and `/install/overlays/multi-namespace/`. The last topology is probably the most secure as it will avoid the operator to access to any resource outside those namespaces for which you've provided the proper security rules.
+
+> NOTE: OLM only allows own and global installation mode.
+
 ## Configuration
 
 There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
