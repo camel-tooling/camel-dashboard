@@ -14,7 +14,7 @@ description: "Lightweight monitoring tool for Apache Camel applications on Kuber
 	<p class="lead mt-5">Monitor your fleet of Camel applications on Kubernetes</p>
 </div>
 
-{{< blocks/link-down color="info" >}}
+{{< blocks/link-down color="primary" >}}
 {{< /blocks/cover >}}
 
 {{% blocks/lead color="light" %}}
