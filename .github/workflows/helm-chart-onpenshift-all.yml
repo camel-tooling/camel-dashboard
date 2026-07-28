@@ -25,11 +25,11 @@ jobs:
           echo "Ref: ${{ inputs.ref }}"
 
       - name: Checkout current repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: main
       - name: Checkout charts repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: camel-tooling/camel-dashboard-openshift-all
           path: camel-dashboard-openshift-all
