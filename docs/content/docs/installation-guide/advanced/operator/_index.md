@@ -76,6 +76,8 @@ You can edit the Subscription custom resource, setting the channel you want to u
 
 > NOTE: some Kubernetes clusters such as Openshift may let you to perform the same operation from a GUI as well. Refer to the cluster instruction to learn how to perform such action from user interface.
 
+> NOTE: when installed via OLM in **global mode** on OpenShift, the operator automatically deploys the [Camel Dashboard Console](/camel-dashboard/docs/installation-guide/advanced/console/) plugin — no separate installation is required. See the [console documentation](/camel-dashboard/docs/installation-guide/advanced/console/#automatic-deployment-via-olm) for details.
+
 ### Installation topologies
 
 When you decide to install the operator, you can decide to install the following topology:

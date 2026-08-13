@@ -23,6 +23,20 @@ resources:
 
 This operator can work standalone and you can use the data exposed in the `CamelMonitor` custom resource accordingly. However it has a great fit with the [Camel Dashboard Console](https://github.com/camel-tooling/camel-dashboard-console?tab=readme-ov-file#deployment-to-openshift), which is a visual representation of the services exposed by the operator.
 
+## Automatic deployment via OLM
+
+When the Camel Monitor Operator is installed via OLM in **global mode** (watching all namespaces), the Camel Dashboard Console is **automatically deployed** on OpenShift — no separate installation step is required.
+
+The operator detects the presence of the `ConsolePlugin` CRD on the cluster and automatically creates and manages all required resources (Deployment, Service, ConfigMap and ConsolePlugin CR) in the operator namespace. The console plugin image is bundled with the OLM catalog entry.
+
+The operator continuously reconciles these resources, so any manual modification or accidental deletion will be automatically corrected.
+
+The console plugin is deployed but **not activated by default**. After installation, enable it via the notification banner that appears in the OpenShift web console, or manually in **Administration > Cluster Settings > Configuration > Console operator > Console plugins**.
+
+On operator uninstall, the console resources are cleaned up automatically. However, you should **disable the console plugin before uninstalling** the operator, as the cluster will otherwise still consider the plugin as enabled even after its resources have been removed.
+
+> NOTE: Automatic deployment only applies to the **global** OLM installation mode. For namespace-scoped installations, or non-OLM installations (Helm, Kustomize), use the Helm chart method described below.
+
 ## Camel Dashboard Console dependencies matrix
 
 The Camel Dashboard Console is a plugin extension of OpenShift Console exposing the data from the Camel Monitor Operator.
@@ -42,7 +56,7 @@ NOTE: the old version 0.1.0 uses the old `CamelApp` custom resource.
 
 > WARNING: If you installed the camel-dashboard-openshift-all helm chart you need to prefix any configuration in helm chart values by `camel-dashboard-console.`
 
-### Installing the Helm Chart
+### Installing the Helm Chart (non-OLM)
 
 A [Helm](https://helm.sh) chart is available to deploy the console plugin to an OpenShift environment.
 
