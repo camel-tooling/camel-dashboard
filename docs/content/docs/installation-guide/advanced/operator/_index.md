@@ -212,3 +212,17 @@ You should also set the environment variable `PROMETHEUS_RULE_LABEL` in order to
 #### Application level
 
 Not available at the moment. Feel free to open a change request to enable this in future releases.
+
+### Check the availability of a new Camel version
+
+When you're running many applications you may want to have an automatic check and verify the ones that may require an upgrade because Camel has released a new version. The operator is able to detect any new release and report as a condition into each of the monitored `CamelMonitor` custom resources.
+
+The condition is named "UpgradeAvailable" and will report `true` or `false` with a message specifying which is the new version available.
+
+#### Operator level
+
+You can setup the environment variable `CHECK_VERSION_UPGRADE` (by default it is enabled). It must be `true` to enable the monitoring of a Camel version upgrade. Remove the variable or set to any other value to disable the feature.
+
+#### Application level
+
+Not available at the moment. Feel free to open a change request to enable this in future releases.
