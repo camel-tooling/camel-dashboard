@@ -155,7 +155,7 @@ You can add an annotation to the `Deployment` resource, `camel.apache.org/sli-ex
 
 ### Configure the observability services port
 
-The operator is able to discover applications thanks to the presence of the `camel-observability-services` component. By default this component exposes the metrics on port `9876` (which is also the operator default if you don't configure it). However this value can be changed by the user to any other port (including the regular business service port). You can configure is both at Operator or Application level.
+The operator is able to discover applications thanks to the presence of the `camel-observability-services` component. By default this component exposes the metrics on port `9876` (which is also the operator default if you don't configure it). However this value can be changed by the user to any other port (including the regular business service port). You can configure it both at Operator or Application level.
 
 #### Operator level
 
@@ -164,6 +164,18 @@ You can setup the environment variables `OBSERVABILITY_PORT` with the number of 
 #### Application level
 
 You can add an annotation to the `Deployment` resource, `camel.apache.org/observability-services-port` with the value expected for that specific application only.
+
+### Configure the observability services metrics and health endpoints
+
+Any application is expected to expose, by Camel default convention, the metrics and health endpoints in `/observe/metrics` and `/observe/health` respectively. However this may not be always true and it can change, in particular for those existing apps that follow the specific runtime convention (Quarkus default is `/q/` base path, Springboot is `/actuator`). You can configure them both at Operator or Application level.
+
+#### Operator level
+
+You can setup the environment variables `OBSERVABILITY_METRICS_ENDPOINT` and `OBSERVABILITY_HEALTH_ENDPOINT` respectively when all your applications are expected to expose those endpoints in a different location from the default values..
+
+#### Application level
+
+You can add an annotation to the `Deployment` resource, `camel.apache.org/metrics-endpoint` and `camel.apache.org/health-endpoint` respectively.
 
 ### Include Prometheus PodMonitor
 
