@@ -169,13 +169,15 @@ You can add an annotation to the `Deployment` resource, `camel.apache.org/observ
 
 Any application is expected to expose, by Camel default convention, the metrics and health endpoints in `/observe/metrics` and `/observe/health` respectively. However this may not be always true and it can change, in particular for those existing apps that follow the specific runtime convention (Quarkus default is `/q/` base path, Springboot is `/actuator`). You can configure them both at Operator or Application level.
 
+By default, the endpoints will try first the Camel convention, the Quarkus one and finally the Spring Boot one. In general you can provide more than a single configuration (comma separated), although, for performance reason it is better to use only one.
+
 #### Operator level
 
-You can setup the environment variables `OBSERVABILITY_METRICS_ENDPOINT` and `OBSERVABILITY_HEALTH_ENDPOINT` respectively when all your applications are expected to expose those endpoints in a different location from the default values..
+You can setup the environment variables `OBSERVABILITY_METRICS_ENDPOINTS` and `OBSERVABILITY_HEALTH_ENDPOINTS` respectively when all your applications are expected to expose those endpoints in a different location from the default values. You can provide a comma separated value.
 
 #### Application level
 
-You can add an annotation to the `Deployment` resource, `camel.apache.org/metrics-endpoint` and `camel.apache.org/health-endpoint` respectively.
+You can add an annotation to the `Deployment` resource, `camel.apache.org/metrics-endpoints` and `camel.apache.org/health-endpoints` respectively. You can provide a comma separated value.
 
 ### Include Prometheus PodMonitor
 
