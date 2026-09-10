@@ -105,7 +105,9 @@ The operator is instructed to watch `Deployment` and verify if they are marked a
 
 ### Collect Camel metrics
 
-The operator is designed to consume the services exposed by [Camel Observability Services component](https://camel.apache.org/components/next/others/observability-services.html).
+The operator is designed to consume the services exposed by [Camel Observability Services component](https://camel.apache.org/components/next/others/observability-services.html). This component is a lightweight collection of existing components and it provides conventional values which makes the integration with Camel Monitor operator as zero configuration.
+
+The Camel Monitor operator will also work when you provide `camel-health` and `camel-micrometer-prometheus` (and relative runtime extensions), but it may require some configuration on the application to let the Camel Monitor operator know how to reach the metrics endpoints.
 
 It will works also when no services are exposed, but it won't be able to collect any meaningful metrics (likely only the status and the number of replicas).
 
@@ -153,17 +155,19 @@ You can setup the environment variables `SLI_ERR_PERCENTAGE` and `SLI_WARN_PERCE
 
 You can add an annotation to the `Deployment` resource, `camel.apache.org/sli-exchange-error-percentage` and `camel.apache.org/sli-exchange-warning-percentage` with the value expected for that specific application only.
 
-### Configure the observability services port
+### Configure the observability services ports
 
-The operator is able to discover applications thanks to the presence of the `camel-observability-services` component. By default this component exposes the metrics on port `9876` (which is also the operator default if you don't configure it). However this value can be changed by the user to any other port (including the regular business service port). You can configure it both at Operator or Application level.
+The operator is able to discover applications thanks to the presence of the `camel-observability-services` component or the health and metrics components provided separately in the application. By default this component exposes the health and metrics on port `9876` (which is also the operator default if you don't configure it). However this value can be changed by the user to any other port (including the regular business service port). You can configure it both at Operator or Application level.
+
+If the operator does not find any available service on the conventional port, and no one else was configured explicitly, it will also try on `8080`, which is the default when you're not using the `camel-observability-services`.
 
 #### Operator level
 
-You can setup the environment variables `OBSERVABILITY_PORT` with the number of the port where the operator has to get the metrics.
+You can setup the environment variables `OBSERVABILITY_HEALTH_PORTS` and `OBSERVABILITY_METRICS_PORTS` with the number of the ports where the operator has to get the health and metrics. You can provide more than a single configuration (comma separated), although, for performance reason it is better to use only one.
 
 #### Application level
 
-You can add an annotation to the `Deployment` resource, `camel.apache.org/observability-services-port` with the value expected for that specific application only.
+You can add an annotation to the `Deployment` resource, `camel.apache.org/health-ports` and `camel.apache.org/metrics-ports` with the value expected for that specific application only. You can provide more than a single configuration (comma separated), although, for performance reason it is better to use only one.
 
 ### Configure the observability services metrics and health endpoints
 
