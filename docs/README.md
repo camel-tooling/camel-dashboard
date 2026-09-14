@@ -117,7 +117,7 @@ Alert message
 **Hugo modules not found:**
 ```bash
 hugo mod tidy
-hugo mod get github.com/google/docsy@v0.12.0
+hugo mod get github.com/google/docsy@v0.15.0
 ```
 
 **PostCSS errors:**
