@@ -59,10 +59,10 @@ camel-monitor-operator-7c6bcf5576-fwn7s   1/1     Running   0          4m18s
 
 ```bash
 $ kubectl create ns camel-monitor
-$ kubectl apply -k github.com/camel-tooling/camel-monitor-operator/install/overlays/kubernetes/descoped?ref=v0.2.1 --server-side
+$ kubectl apply -k github.com/camel-tooling/camel-monitor-operator/install/overlays/all-namespaces?ref=v0.2.1 --server-side
 ```
 
-You can specify as ref parameter the version you’re willing to install (ie, v0.2.1). The command above will install a descoped (global) operator in the `camel-monitor` namespace. This is the suggested configuration in order to manage `CamelMonitors` in all namespaces.
+You can specify as ref parameter the version you’re willing to install (ie, v0.2.1). The command above will install a global operator (watching all namespaces) in the `camel-monitor` namespace. This is the suggested configuration in order to manage `CamelMonitors` in all namespaces.
 
 ### OLM
 
@@ -76,6 +76,23 @@ You can edit the Subscription custom resource, setting the channel you want to u
 
 > NOTE: some Kubernetes clusters such as Openshift may let you to perform the same operation from a GUI as well. Refer to the cluster instruction to learn how to perform such action from user interface.
 
+> NOTE: when installed via OLM in **global mode** on OpenShift, the operator automatically deploys the [Camel Dashboard Console](/camel-dashboard/docs/installation-guide/advanced/console/) plugin — no separate installation is required. See the [console documentation](/camel-dashboard/docs/installation-guide/advanced/console/#automatic-deployment-via-olm) for details.
+
+### Installation topologies
+
+When you decide to install the operator, you can decide to install the following topology:
+
+* Global operator: a single global operator watching all namespaces.
+* Own namespace operator: a namespaces operator watching its own namespace only.
+* Single namespace operator: an operator installed in a namespace and watching another namespace.
+* Multi namespace operator: an operator installed in a namespace and watching multiple namespaces.
+
+The namespace(s) to watch is configured via `WATCH_NAMESPACE` variable in the operator `Deployment` resource. You can provide an empty value (watch all namespaces), a single value (watch either the own namespace or any other namespace) or a comma separated value (watching as many namespaces as provided).
+
+It's important to notice that when running the single or multiple namespace operator, you will need to provide the RBACs which are expected by the operator to run properly. For such a configuration you can take as a reference the `Kustomize` examples available in `/install/overlays/single-namespace/` and `/install/overlays/multi-namespace/`. The last topology is probably the most secure as it will avoid the operator to access to any resource outside those namespaces for which you've provided the proper security rules.
+
+> NOTE: OLM only allows own and global installation mode.
+
 ## Configuration
 
 There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
@@ -88,7 +105,9 @@ The operator is instructed to watch `Deployment` and verify if they are marked a
 
 ### Collect Camel metrics
 
-The operator is designed to consume the services exposed by [Camel Observability Services component](https://camel.apache.org/components/next/others/observability-services.html).
+The operator is designed to consume the services exposed by [Camel Observability Services component](https://camel.apache.org/components/next/others/observability-services.html). This component is a lightweight collection of existing components and it provides conventional values which makes the integration with Camel Monitor operator as zero configuration.
+
+The Camel Monitor operator will also work when you provide `camel-health` and `camel-micrometer-prometheus` (and relative runtime extensions), but it may require some configuration on the application to let the Camel Monitor operator know how to reach the metrics endpoints.
 
 It will works also when no services are exposed, but it won't be able to collect any meaningful metrics (likely only the status and the number of replicas).
 
@@ -136,17 +155,33 @@ You can setup the environment variables `SLI_ERR_PERCENTAGE` and `SLI_WARN_PERCE
 
 You can add an annotation to the `Deployment` resource, `camel.apache.org/sli-exchange-error-percentage` and `camel.apache.org/sli-exchange-warning-percentage` with the value expected for that specific application only.
 
-### Configure the observability services port
+### Configure the observability services ports
 
-The operator is able to discover applications thanks to the presence of the `camel-observability-services` component. By default this component exposes the metrics on port `9876` (which is also the operator default if you don't configure it). However this value can be changed by the user to any other port (including the regular business service port). You can configure is both at Operator or Application level.
+The operator is able to discover applications thanks to the presence of the `camel-observability-services` component or the health and metrics components provided separately in the application. By default this component exposes the health and metrics on port `9876` (which is also the operator default if you don't configure it). However this value can be changed by the user to any other port (including the regular business service port). You can configure it both at Operator or Application level.
+
+If the operator does not find any available service on the conventional port, and no one else was configured explicitly, it will also try on `8080`, which is the default when you're not using the `camel-observability-services`.
 
 #### Operator level
 
-You can setup the environment variables `OBSERVABILITY_PORT` with the number of the port where the operator has to get the metrics.
+You can setup the environment variables `OBSERVABILITY_HEALTH_PORTS` and `OBSERVABILITY_METRICS_PORTS` with the number of the ports where the operator has to get the health and metrics. You can provide more than a single configuration (comma separated), although, for performance reason it is better to use only one.
 
 #### Application level
 
-You can add an annotation to the `Deployment` resource, `camel.apache.org/observability-services-port` with the value expected for that specific application only.
+You can add an annotation to the `Deployment` resource, `camel.apache.org/health-ports` and `camel.apache.org/metrics-ports` with the value expected for that specific application only. You can provide more than a single configuration (comma separated), although, for performance reason it is better to use only one.
+
+### Configure the observability services metrics and health endpoints
+
+Any application is expected to expose, by Camel default convention, the metrics and health endpoints in `/observe/metrics` and `/observe/health` respectively. However this may not be always true and it can change, in particular for those existing apps that follow the specific runtime convention (Quarkus default is `/q/` base path, Springboot is `/actuator`). You can configure them both at Operator or Application level.
+
+By default, the endpoints will try first the Camel convention, the Quarkus one and finally the Spring Boot one. In general you can provide more than a single configuration (comma separated), although, for performance reason it is better to use only one.
+
+#### Operator level
+
+You can setup the environment variables `OBSERVABILITY_METRICS_ENDPOINTS` and `OBSERVABILITY_HEALTH_ENDPOINTS` respectively when all your applications are expected to expose those endpoints in a different location from the default values. You can provide a comma separated value.
+
+#### Application level
+
+You can add an annotation to the `Deployment` resource, `camel.apache.org/metrics-endpoints` and `camel.apache.org/health-endpoints` respectively. You can provide a comma separated value.
 
 ### Include Prometheus PodMonitor
 
@@ -193,6 +228,20 @@ When the operator detects the existence of the Prometheus custom resources, it w
 You can setup the environment variable `CREATE_PROMETHEUS_RULE` (by default it is enabled). It must be `true` to enable the creation of the `PrometheusRule` custom resource. Remove the variable or set to any other value to disable the feature.
 
 You should also set the environment variable `PROMETHEUS_RULE_LABEL` in order to configure the alert rules created with the proper label selector expected by your existing `Prometheus` instance (i.e., via `.spec.ruleSelector.matchLabels`). The environment variable expect a single label formatted as `key=value`. By default, the operator will configure a label as `camel.apache.org/alerts=camel-dashboard-operator` if none is specified.
+
+#### Application level
+
+Not available at the moment. Feel free to open a change request to enable this in future releases.
+
+### Check the availability of a new Camel version
+
+When you're running many applications you may want to have an automatic check and verify the ones that may require an upgrade because Camel has released a new version. The operator is able to detect any new release and report as a condition into each of the monitored `CamelMonitor` custom resources.
+
+The condition is named "UpgradeAvailable" and will report `true` or `false` with a message specifying which is the new version available.
+
+#### Operator level
+
+You can setup the environment variable `CHECK_VERSION_UPGRADE` (by default it is enabled). It must be `true` to enable the monitoring of a Camel version upgrade. Remove the variable or set to any other value to disable the feature.
 
 #### Application level
 
