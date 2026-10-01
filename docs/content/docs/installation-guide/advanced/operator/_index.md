@@ -241,7 +241,13 @@ The condition is named "UpgradeAvailable" and will report `true` or `false` with
 
 #### Operator level
 
-You can setup the environment variable `CHECK_VERSION_UPGRADE` (by default it is enabled). It must be `true` to enable the monitoring of a Camel version upgrade. Remove the variable or set to any other value to disable the feature.
+You can setup the environment variable `CHECK_VERSION_UPGRADE` (by default it is enabled). It must be `true` to enable the monitoring of a Camel version upgrade. Remove the variable or set to any other value to disable the feature. You can also control the Maven repository to access by adding the following environment variables to the operator Deployment (in parenthesis the default value, when the variable is not specified):
+
+- CAMEL_MAIN_MAVEN_META_URL (`https://repo1.maven.org/maven2/org/apache/camel/camel-core/maven-metadata.xml`)
+- CAMEL_QUARKUS_MAVEN_META_URL (`https://repo1.maven.org/maven2/io/quarkus/platform/quarkus-camel-bom/maven-metadata.xml`)
+- CAMEL_SPRING_BOOT_MAVEN_META_URL (`https://repo1.maven.org/maven2/org/apache/camel/springboot/camel-spring-boot-bom/maven-metadata.xml`)
+
+The operator Pod must be able to reach those endpoints to make the feature work as expected.
 
 #### Application level
 
