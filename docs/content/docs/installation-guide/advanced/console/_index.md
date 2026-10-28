@@ -4,19 +4,19 @@ weight: 40
 aliases:
     - /docs/installation-guide/console/overview/
 resources:
-- src: "**oc-console-list-420*.png"
+- src: "**oc-console-list-422*.png"
   params:
     byline: "Camel Applications"
-- src: "**oc-console-detail-1-421*.png"
+- src: "**oc-console-detail-1-422*.png"
   params:
     byline: "Camel Application > Details 1"
-- src: "**oc-console-detail-2-421*.png"
+- src: "**oc-console-detail-2-422*.png"
   params:
     byline: "Camel Application > Details 2"
-- src: "**oc-console-detail-resources-420*.png"
+- src: "**oc-console-detail-resources-422*.png"
   params:
     byline: "Camel Application > Resources"
-- src: "**oc-console-detail-metrics-420*.png"
+- src: "**oc-console-detail-metrics-422*.png"
   params:
     byline: "Camel Application > Metrics"
 ---
@@ -45,7 +45,8 @@ Below you can find the compatibility list for its dependencies:
 
 | Camel Dashboard Console | Openshift          | Camel Monitor Operator |
 | ----------------------- | ------------------ | ------------------------ |
-| next (0.5.1)            | Openshift 4.21+    | 0.2.1                    |
+| next (1.0.1)            | Openshift 4.22     | 1.0.0                    |
+| 1.0.0                   | Openshift 4.22     | 1.0.0                    |
 | 0.5.0                   | Openshift 4.21+    | 0.2.1                    |
 | 0.4.1                   | Openshift 4.21+    | 0.1.0                    |
 | 0.3.2                   | Openshift 4.20     | 0.1.0                    |
@@ -84,23 +85,23 @@ helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console 
 Once installed, the **Camel Dashboard Console** features should be accessible in the OpenShift Console.
 
 * The *Camel Applications* page displays the list of your deployed Camel Applications. It is available as a `Workloads` tab on the `admin` view and as a navigation tab on the `developer` view.
-{{% imgproc oc-console-list-420 Resize "1935x1001" %}}
+{{% imgproc oc-console-list-422 Resize "1935x1001" %}}
 {{% /imgproc %}}
 
 * The *Camel Application* page will show informations and metrics for the chose deployed Camel Application
 
     * informations from the Observability Services
 
-{{% imgproc oc-console-detail-1-421 Resize "1798x1029" %}}
+{{% imgproc oc-console-detail-1-422 Resize "1798x1029" %}}
 {{% /imgproc %}}
-{{% imgproc oc-console-detail-2-421 Resize "1798x1029" %}}
+{{% imgproc oc-console-detail-2-422 Resize "1798x1029" %}}
 {{% /imgproc %}}
    * Kubernetes native resources linked to the deployment, with some acces to logs, hawtio console, etc
 
-{{% imgproc oc-console-detail-resources-420 Resize "1935x1001" %}}
+{{% imgproc oc-console-detail-resources-422 Resize "1935x1001" %}}
 {{% /imgproc %}}
 
    * Prometheus metrics on resources utilization for the deployment
 
-{{% imgproc oc-console-detail-metrics-420 Resize "1935x1001" %}}
+{{% imgproc oc-console-detail-metrics-422 Resize "1935x1001" %}}
 {{% /imgproc %}}
