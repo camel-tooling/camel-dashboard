@@ -356,7 +356,7 @@ You can add some additional non-optional configurations:
 // Configure custom SLI Exchange error and warning percentage
 quarkus.openshift.annotations."camel.apache.org/sli-exchange-error-percentage"=1
 quarkus.openshift.annotations."camel.apache.org/sli-exchange-warning-percentage"=5
-`
+```
 
 ### Spring Boot Applications
 
