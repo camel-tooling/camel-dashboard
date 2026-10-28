@@ -53,7 +53,7 @@ Below you can find the compatibility list for its dependencies:
 | 0.2.2                   | Openshift 4.19     | 0.1.0                    |
 | 0.1.0                   | Openshift 4.18     | 0.0.1                    |
 
-NOTE: the old version 0.1.0 uses the old `CamelApp` custom resource.
+NOTE: console versions up to 0.5.0 also support the legacy `CamelApp` custom resource, which is no longer supported starting 1.0.0. The `camelAppRbac` chart value was removed in the same release: move any `CamelApp` permissions to `camelMonitorRbac` when upgrading.
 
 > WARNING: If you installed the camel-dashboard-openshift-all helm chart you need to prefix any configuration in helm chart values by `camel-dashboard-console.`
 
@@ -67,6 +67,8 @@ The following Helm parameters are required:
 
 Additional parameters can be specified if desired. Consult the chart values file for the full set of supported parameters.
 
+> NOTE: the chart deploys a `NetworkPolicy` by default (`plugin.networkPolicy.enabled: true`), allowing ingress on the plugin port (`9443`) and denying all egress. Set `plugin.networkPolicy.enabled=false` if the plugin needs other network flows or if network policies are managed separately.
+
 First, add the chart repository to the local helm [configuration](https://helm.sh/docs/helm/helm_repo_add/) (you might have already done it if you installed the [Camel Monitor Operator](/camel-dashboard/docs/operator)):
 ```bash
 $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/charts
@@ -75,33 +77,35 @@ $ helm repo add camel-dashboard https://camel-tooling.github.io/camel-dashboard/
 Install *Camel Dashboard* using the helm [install](https://helm.sh/docs/helm/helm_install/) command:
 
 ```bash
-helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console --version 0.5.0 --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:0.5.0
+helm upgrade -i camel-dashboard-console camel-dashboard/camel-dashboard-console --version 1.0.0 --namespace camel-dashboard --set plugin.image=quay.io/camel-tooling/camel-dashboard-console:1.0.0
 ```
 
-> NOTE: the installation procedure is still in alpha phase. Verify the latest release and change the version (ie, `0.5.0`) from the previous script accordingly.
+> NOTE: 1.0.0 requires OpenShift 4.22. Refer to the compatibility matrix above to pick the release matching your cluster.
 
 ## Overview
 
 Once installed, the **Camel Dashboard Console** features should be accessible in the OpenShift Console.
 
-* The *Camel Applications* page displays the list of your deployed Camel Applications. It is available as a `Workloads` tab on the `admin` view and as a navigation tab on the `developer` view.
+* The *Camel Applications* page lists the deployed Camel Applications with their status, Camel health, runtime provider, Camel version, upgrade availability and age. It is available as a `Workloads` tab on the `admin` view and as a navigation tab on the `developer` view.
+
+  The health counters next to the title (*Healthy*, *Degraded*, *Critical*) summarize all applications and act as filters when clicked. The filter menu also narrows the list by name, Camel health, runtime provider, Camel version, status or upgrade availability.
+
 {{% imgproc oc-console-list-422 Resize "1935x1001" %}}
 {{% /imgproc %}}
 
-* The *Camel Application* page will show informations and metrics for the chose deployed Camel Application
-
-    * informations from the Observability Services
+* The *Camel Application* page shows details and metrics for the selected Camel Application. The `Details` tab shows health, service level indicator (success rate, exchange counts), resource pressure and pods summary from the Observability Services, plus runtime, process and endpoint information for each pod.
 
 {{% imgproc oc-console-detail-1-422 Resize "1798x1029" %}}
 {{% /imgproc %}}
 {{% imgproc oc-console-detail-2-422 Resize "1798x1029" %}}
 {{% /imgproc %}}
-   * Kubernetes native resources linked to the deployment, with some acces to logs, hawtio console, etc
+
+* The `Resources` tab lists the Kubernetes native resources linked to the deployment, with access to logs and the Hawtio console.
 
 {{% imgproc oc-console-detail-resources-422 Resize "1935x1001" %}}
 {{% /imgproc %}}
 
-   * Prometheus metrics on resources utilization for the deployment
+* The `Metrics` tab shows Prometheus metrics on memory, CPU, filesystem and network usage for the deployment.
 
 {{% imgproc oc-console-detail-metrics-422 Resize "1935x1001" %}}
 {{% /imgproc %}}
