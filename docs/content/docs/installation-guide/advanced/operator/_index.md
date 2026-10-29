@@ -91,8 +91,6 @@ The namespace(s) to watch is configured via `WATCH_NAMESPACE` variable in the op
 
 It's important to notice that when running the single or multiple namespace operator, you will need to provide the RBACs which are expected by the operator to run properly. For such a configuration you can take as a reference the `Kustomize` examples available in `/install/overlays/single-namespace/` and `/install/overlays/multi-namespace/`. The last topology is probably the most secure as it will avoid the operator to access to any resource outside those namespaces for which you've provided the proper security rules.
 
-> NOTE: OLM only allows own and global installation mode.
-
 ## Configuration
 
 There are several configuration you can apply separately to each of your Camel application. They mostly work at general level (setting an environment variable on the operator) or at application level (setting an annotation on the Deployment resource).
