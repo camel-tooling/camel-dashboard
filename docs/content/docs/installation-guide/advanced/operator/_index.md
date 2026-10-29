@@ -187,7 +187,9 @@ You can add an annotation to the `Deployment` resource, `camel.apache.org/metric
 
 The presence of `camel-observability-services` leverages Micrometer Prometheus technology. The exposure of the metrics endpoint enables the possibility for the operator to include the custom resource expected by Prometheus operator automatically. The operator is able to detect the presence of such capability on the cluster, and, by default, include a `PodMonitor` associated with the Camel application monitored by the dashboard.
 
-Such a `PodMonitor` can be eventually used by the final user for more [advanced monitoring activities](https://prometheus-operator.dev/docs/developer/getting-started/#using-podmonitors).
+Such a `PodMonitor` can be eventually used by the final user for more [advanced monitoring activities](https://prometheus-operator.dev/docs/developer/getting-started/#using-podmonitors). The final user has to provide the Prometheus operator installation before the Camel Monitor operator. When the installation happens after, then, a Camel Monitor operator restart is required.
+
+> NOTE: in certain clusters (for example Openshift) you won't require to install the Prometheus operator as it works with the UWM by default, when this enabled on the cluster and the namespace (project) where the application is running.
 
 #### Operator level
 
