@@ -7,6 +7,10 @@ tags: ["release", "console", "camel", "openshift", "dashboard", "monitor"]
 icon: "rocket"
 aliases:
     /blog/2026/camel-monitor-operator-1-0-0-release/
+resources:
+- src: "**oc-console-list-422*.png"
+  params:
+    byline: "Camel Applications"
 ---
 
 We're pleased to announce the availability of **Camel Monitor operator version 1.0.0**. This is the first stable release of the project and we're happy to announce its general availability with a lot of new great features to help you monitor your Camel workloads on Kubernetes and Openshift.
@@ -17,7 +21,14 @@ From this version onward we're including the Camel Dashboard plugin as part of t
 
 The Camel Dashboard plugin is a nice way to provide a view of the monitored fleet of Camel applications running on the cluster. It's based on the Openshift plugin extension, therefore it will be installed only when the operator detects the cluster type as Openshift.
 
+The new version is reflecting the changes and the new feature available in the last release. Here a quick overview of the main list page:
+
+{{% imgproc oc-console-list-422 Resize "1935x1001" %}}
+{{% /imgproc %}}
+
 If you're installing it via OLM, the bundle will include the configuration required to execute the plugin automatically. We were supporting the plugin even in previous versions, but it required a separate installation procedure.
+
+For the other installation procedures (Helm and Kustomize), then you just need to provide an environment variable `OPENSHIFT_CONSOLE_PLUGIN_IMAGE` set to `quay.io/camel-tooling/camel-dashboard-console:1.0.0`.
 
 ## Configure health and metrics ports and endpoints
 
