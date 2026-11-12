@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600" width="1140" height="600" role="img" aria-labelledby="t d" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t">Camel Monitor Operator - simplified architecture</title>
+  <desc id="d">A CI/CD tool deploys a labelled Camel application. The Camel Monitor Operator discovers it, scrapes its health and metrics endpoints and publishes a CamelMonitor resource that the Camel Dashboard UI reads.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef3f9"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1b2a3a" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#34495e"/>
+    </marker>
+  </defs>
+
+  <rect width="1140" height="600" rx="16" fill="url(#bg)"/>
+  <text x="570" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#104d92">Camel Monitor Operator - Architecture</text>
+  <text x="570" y="62" text-anchor="middle" font-size="13" fill="#5b6770">From CI/CD deployment to the Camel Dashboard</text>
+
+  <!-- Kubernetes cluster -->
+  <rect x="330" y="85" width="770" height="475" rx="14" fill="#ffffff" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="350" y="110" font-size="14" font-weight="700" fill="#5b6770">Kubernetes / OpenShift cluster</text>
+
+  <!-- Application namespace -->
+  <rect x="360" y="125" width="290" height="410" rx="12" fill="#fdf3ea" stroke="#cf7428" stroke-width="1.5"/>
+  <text x="378" y="148" font-size="13" font-weight="700" fill="#a85a1a">Application namespace</text>
+
+  <!-- CI/CD -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="165" width="210" height="200" rx="12" fill="#ffffff" stroke="#6d4aa8" stroke-width="2"/>
+    <rect x="40" y="165" width="210" height="34" rx="12" fill="#6d4aa8"/>
+    <rect x="40" y="185" width="210" height="14" fill="#6d4aa8"/>
+  </g>
+  <text x="145" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">CI/CD tool</text>
+  <text x="145" y="225" text-anchor="middle" font-size="12" fill="#34495e">Builds the Camel image</text>
+  <text x="145" y="245" text-anchor="middle" font-size="12" fill="#34495e">and deploys the manifests</text>
+  <text x="145" y="275" text-anchor="middle" font-size="12" fill="#5b6770">kubectl / Helm / GitOps</text>
+  <text x="145" y="305" text-anchor="middle" font-size="12" font-weight="600" fill="#6d4aa8">Adds the label</text>
+  <text x="145" y="323" text-anchor="middle" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#6d4aa8">camel.apache.org/monitor</text>
+
+  <!-- Deployment card -->
+  <g filter="url(#shadow)">
+    <rect x="380" y="165" width="250" height="100" rx="10" fill="#ffffff" stroke="#cf7428" stroke-width="2"/>
+    <rect x="380" y="165" width="250" height="30" rx="10" fill="#cf7428"/>
+    <rect x="380" y="180" width="250" height="15" fill="#cf7428"/>
+  </g>
+  <text x="505" y="186" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Deployment / CronJob</text>
+  <text x="505" y="220" text-anchor="middle" font-size="12" fill="#34495e">Camel Main, Quarkus or Spring Boot</text>
+  <text x="505" y="240" text-anchor="middle" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#a85a1a">label: camel.apache.org/monitor</text>
+
+  <!-- Pods card -->
+  <g filter="url(#shadow)">
+    <rect x="380" y="355" width="250" height="150" rx="10" fill="#ffffff" stroke="#cf7428" stroke-width="2"/>
+    <rect x="380" y="355" width="250" height="30" rx="10" fill="#cf7428"/>
+    <rect x="380" y="370" width="250" height="15" fill="#cf7428"/>
+  </g>
+  <text x="505" y="376" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Camel application pods</text>
+  <text x="505" y="410" text-anchor="middle" font-size="12" fill="#34495e">Expose observability endpoints:</text>
+  <text x="505" y="436" text-anchor="middle" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#34495e">health   /observe/health</text>
+  <text x="505" y="456" text-anchor="middle" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#34495e">metrics  /observe/metrics</text>
+  <text x="505" y="485" text-anchor="middle" font-size="11" fill="#5b6770">(q/... for Quarkus, actuator/... for Spring Boot)</text>
+
+  <!-- Operator -->
+  <g filter="url(#shadow)">
+    <rect x="760" y="130" width="310" height="150" rx="10" fill="#ffffff" stroke="#104d92" stroke-width="2"/>
+    <rect x="760" y="130" width="310" height="34" rx="10" fill="#104d92"/>
+    <rect x="760" y="150" width="310" height="14" fill="#104d92"/>
+  </g>
+  <text x="915" y="153" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Camel Monitor Operator</text>
+  <text x="915" y="190" text-anchor="middle" font-size="12" fill="#34495e">Discovers labelled Deployments / CronJobs</text>
+  <text x="915" y="212" text-anchor="middle" font-size="12" fill="#34495e">Polls pod health and metrics (default 60s)</text>
+  <text x="915" y="234" text-anchor="middle" font-size="12" fill="#34495e">Computes phase, exchange stats, SLI,</text>
+  <text x="915" y="252" text-anchor="middle" font-size="12" fill="#34495e">CPU / memory pressure</text>
+
+  <!-- CamelMonitor CR -->
+  <g filter="url(#shadow)">
+    <rect x="760" y="325" width="310" height="90" rx="10" fill="#ffffff" stroke="#0f8b8d" stroke-width="2"/>
+    <rect x="760" y="325" width="310" height="30" rx="10" fill="#0f8b8d"/>
+    <rect x="760" y="340" width="310" height="15" fill="#0f8b8d"/>
+  </g>
+  <text x="915" y="346" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">CamelMonitor (cmon) custom resource</text>
+  <text x="915" y="378" text-anchor="middle" font-size="12" fill="#34495e">One per Camel application</text>
+  <text x="915" y="397" text-anchor="middle" font-size="12" fill="#34495e">Status: phase, pods, conditions, success rate</text>
+
+  <!-- Dashboard -->
+  <g filter="url(#shadow)">
+    <rect x="760" y="455" width="310" height="90" rx="10" fill="#ffffff" stroke="#2e7d32" stroke-width="2"/>
+    <rect x="760" y="455" width="310" height="30" rx="10" fill="#2e7d32"/>
+    <rect x="760" y="470" width="310" height="15" fill="#2e7d32"/>
+  </g>
+  <text x="915" y="476" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Camel Dashboard UI</text>
+  <text x="915" y="508" text-anchor="middle" font-size="12" fill="#34495e">OpenShift console plugin</text>
+  <text x="915" y="527" text-anchor="middle" font-size="12" fill="#34495e">Fleet view of all Camel applications</text>
+
+  <!-- Arrows -->
+  <g fill="none" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M250 215 H378"/>
+    <path d="M505 265 V353"/>
+    <path d="M758 215 H632"/>
+    <path d="M758 255 H696 V420 H632"/>
+    <path d="M915 280 V323"/>
+    <path d="M915 455 V417"/>
+  </g>
+
+  <!-- Arrow labels -->
+  <g font-size="12" font-weight="600" fill="#34495e" text-anchor="middle">
+    <text x="314" y="206">1 · deploy</text>
+    <text x="314" y="236" font-size="11" font-weight="400" fill="#5b6770">labelled app</text>
+    <text x="695" y="206">2 · watch</text>
+    <rect x="643" y="322" width="104" height="38" rx="6" fill="#ffffff"/>
+    <text x="695" y="339">3 · scrape</text>
+    <text x="695" y="355" font-size="11" font-weight="400" fill="#5b6770">health, metrics</text>
+    <text x="520" y="314" text-anchor="start" font-weight="400" fill="#5b6770">manages</text>
+    <text x="925" y="307" text-anchor="start">4 · update status</text>
+    <text x="925" y="440" text-anchor="start">5 · read / watch</text>
+  </g>
+</svg>

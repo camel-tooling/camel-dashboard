@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 760" width="1300" height="760" role="img" aria-labelledby="t d" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t">Camel Monitor Operator - architecture with Prometheus and Grafana</title>
+  <desc id="d">A CI/CD tool deploys a labelled Camel application. The Camel Monitor Operator scrapes its health and metrics endpoints, publishes a CamelMonitor resource read by the Camel Dashboard UI, and optionally generates PodMonitor, GrafanaDashboard and PrometheusRule resources consumed by Prometheus and Grafana.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef3f9"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1b2a3a" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#34495e"/>
+    </marker>
+  </defs>
+
+  <rect width="1300" height="760" rx="16" fill="url(#bg)"/>
+  <text x="650" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#104d92">Camel Monitor Operator - Architecture with Prometheus and Grafana</text>
+  <text x="650" y="62" text-anchor="middle" font-size="13" fill="#5b6770">Core monitoring flow (solid) and optional observability integrations (dashed)</text>
+
+  <!-- Kubernetes cluster -->
+  <rect x="290" y="85" width="995" height="640" rx="14" fill="#ffffff" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="310" y="110" font-size="14" font-weight="700" fill="#5b6770">Kubernetes / OpenShift cluster</text>
+
+  <!-- Application namespace -->
+  <rect x="330" y="125" width="235" height="485" rx="12" fill="#fdf3ea" stroke="#cf7428" stroke-width="1.5"/>
+  <text x="346" y="148" font-size="13" font-weight="700" fill="#a85a1a">Application namespace</text>
+
+  <!-- CI/CD -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="165" width="210" height="200" rx="12" fill="#ffffff" stroke="#6d4aa8" stroke-width="2"/>
+    <rect x="40" y="165" width="210" height="34" rx="12" fill="#6d4aa8"/>
+    <rect x="40" y="185" width="210" height="14" fill="#6d4aa8"/>
+  </g>
+  <text x="145" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">CI/CD tool</text>
+  <text x="145" y="225" text-anchor="middle" font-size="12" fill="#34495e">Builds the Camel image</text>
+  <text x="145" y="245" text-anchor="middle" font-size="12" fill="#34495e">and deploys the manifests</text>
+  <text x="145" y="275" text-anchor="middle" font-size="12" fill="#5b6770">kubectl / Helm / GitOps</text>
+  <text x="145" y="305" text-anchor="middle" font-size="12" font-weight="600" fill="#6d4aa8">Adds the label</text>
+  <text x="145" y="323" text-anchor="middle" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#6d4aa8">camel.apache.org/monitor</text>
+
+  <!-- Deployment card -->
+  <g filter="url(#shadow)">
+    <rect x="343" y="165" width="210" height="100" rx="10" fill="#ffffff" stroke="#cf7428" stroke-width="2"/>
+    <rect x="343" y="165" width="210" height="30" rx="10" fill="#cf7428"/>
+    <rect x="343" y="180" width="210" height="15" fill="#cf7428"/>
+  </g>
+  <text x="448" y="186" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Deployment / CronJob</text>
+  <text x="448" y="220" text-anchor="middle" font-size="12" fill="#34495e">Main / Quarkus / Spring Boot</text>
+  <text x="448" y="241" text-anchor="middle" font-size="11" font-family="Consolas, Menlo, monospace" fill="#a85a1a">camel.apache.org/monitor</text>
+
+  <!-- Pods card -->
+  <g filter="url(#shadow)">
+    <rect x="343" y="400" width="210" height="140" rx="10" fill="#ffffff" stroke="#cf7428" stroke-width="2"/>
+    <rect x="343" y="400" width="210" height="30" rx="10" fill="#cf7428"/>
+    <rect x="343" y="415" width="210" height="15" fill="#cf7428"/>
+  </g>
+  <text x="448" y="421" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Camel application pods</text>
+  <text x="448" y="452" text-anchor="middle" font-size="12" fill="#34495e">Observability endpoints:</text>
+  <text x="448" y="475" text-anchor="middle" font-size="11" font-family="Consolas, Menlo, monospace" fill="#34495e">/observe/health</text>
+  <text x="448" y="493" text-anchor="middle" font-size="11" font-family="Consolas, Menlo, monospace" fill="#34495e">/observe/metrics</text>
+  <text x="448" y="518" text-anchor="middle" font-size="10.5" fill="#5b6770">q/... Quarkus, actuator/... Spring Boot</text>
+
+  <!-- Operator -->
+  <g filter="url(#shadow)">
+    <rect x="670" y="130" width="260" height="140" rx="10" fill="#ffffff" stroke="#104d92" stroke-width="2"/>
+    <rect x="670" y="130" width="260" height="34" rx="10" fill="#104d92"/>
+    <rect x="670" y="150" width="260" height="14" fill="#104d92"/>
+  </g>
+  <text x="800" y="153" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Camel Monitor Operator</text>
+  <text x="800" y="189" text-anchor="middle" font-size="12" fill="#34495e">Discovers labelled workloads</text>
+  <text x="800" y="210" text-anchor="middle" font-size="12" fill="#34495e">Polls pod health and metrics</text>
+  <text x="800" y="231" text-anchor="middle" font-size="12" fill="#34495e">Computes phase, SLI, exchanges,</text>
+  <text x="800" y="249" text-anchor="middle" font-size="12" fill="#34495e">CPU and memory pressure</text>
+
+  <!-- CamelMonitor CR -->
+  <g filter="url(#shadow)">
+    <rect x="670" y="310" width="260" height="80" rx="10" fill="#ffffff" stroke="#0f8b8d" stroke-width="2"/>
+    <rect x="670" y="310" width="260" height="30" rx="10" fill="#0f8b8d"/>
+    <rect x="670" y="325" width="260" height="15" fill="#0f8b8d"/>
+  </g>
+  <text x="800" y="331" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">CamelMonitor (cmon) CR</text>
+  <text x="800" y="360" text-anchor="middle" font-size="12" fill="#34495e">One per Camel application</text>
+  <text x="800" y="378" text-anchor="middle" font-size="12" fill="#34495e">Status: phase, pods, conditions, SLI</text>
+
+  <!-- Generated resources (optional) -->
+  <rect x="670" y="450" width="260" height="165" rx="10" fill="#f4f7fb" stroke="#0f8b8d" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="800" y="472" text-anchor="middle" font-size="13" font-weight="700" fill="#0f6d6f">Generated resources (optional)</text>
+  <g>
+    <rect x="688" y="486" width="224" height="34" rx="6" fill="#ffffff" stroke="#b9c6d3"/>
+    <text x="800" y="500" text-anchor="middle" font-size="12" font-weight="600" fill="#34495e">PodMonitor</text>
+    <text x="800" y="514" text-anchor="middle" font-size="10.5" fill="#5b6770">Prometheus Operator</text>
+    <rect x="688" y="528" width="224" height="34" rx="6" fill="#ffffff" stroke="#b9c6d3"/>
+    <text x="800" y="542" text-anchor="middle" font-size="12" font-weight="600" fill="#34495e">GrafanaDashboard</text>
+    <text x="800" y="556" text-anchor="middle" font-size="10.5" fill="#5b6770">Grafana Operator v5</text>
+    <rect x="688" y="570" width="224" height="34" rx="6" fill="#ffffff" stroke="#b9c6d3"/>
+    <text x="800" y="584" text-anchor="middle" font-size="12" font-weight="600" fill="#34495e">PrometheusRule</text>
+    <text x="800" y="598" text-anchor="middle" font-size="10.5" fill="#5b6770">alert rules</text>
+  </g>
+
+  <!-- Dashboard -->
+  <g filter="url(#shadow)">
+    <rect x="1010" y="130" width="260" height="90" rx="10" fill="#ffffff" stroke="#2e7d32" stroke-width="2"/>
+    <rect x="1010" y="130" width="260" height="30" rx="10" fill="#2e7d32"/>
+    <rect x="1010" y="145" width="260" height="15" fill="#2e7d32"/>
+  </g>
+  <text x="1140" y="151" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Camel Dashboard UI</text>
+  <text x="1140" y="183" text-anchor="middle" font-size="12" fill="#34495e">OpenShift console plugin</text>
+  <text x="1140" y="202" text-anchor="middle" font-size="12" fill="#34495e">Fleet view of Camel applications</text>
+
+  <!-- Grafana (optional) -->
+  <g filter="url(#shadow)">
+    <rect x="1010" y="300" width="260" height="90" rx="10" fill="#ffffff" stroke="#e8710a" stroke-width="2" stroke-dasharray="6 4"/>
+    <rect x="1010" y="300" width="260" height="30" rx="10" fill="#e8710a"/>
+    <rect x="1010" y="315" width="260" height="15" fill="#e8710a"/>
+  </g>
+  <text x="1140" y="321" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Grafana</text>
+  <text x="1140" y="353" text-anchor="middle" font-size="12" fill="#34495e">Folder: camel-dashboard</text>
+  <text x="1140" y="372" text-anchor="middle" font-size="12" fill="#34495e">Exchanges, CPU and JVM memory panels</text>
+
+  <!-- Prometheus (optional) -->
+  <g filter="url(#shadow)">
+    <rect x="1010" y="470" width="260" height="112" rx="10" fill="#ffffff" stroke="#c7311f" stroke-width="2" stroke-dasharray="6 4"/>
+    <rect x="1010" y="470" width="260" height="30" rx="10" fill="#c7311f"/>
+    <rect x="1010" y="485" width="260" height="15" fill="#c7311f"/>
+  </g>
+  <text x="1140" y="491" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Prometheus</text>
+  <text x="1140" y="523" text-anchor="middle" font-size="12" fill="#34495e">Scrapes pod metrics (PodMonitor)</text>
+  <text x="1140" y="543" text-anchor="middle" font-size="12" fill="#34495e">Evaluates alert rules</text>
+  <text x="1140" y="563" text-anchor="middle" font-size="12" fill="#34495e">and routes them to Alertmanager</text>
+
+  <!-- Solid arrows: core flow -->
+  <g fill="none" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M250 215 H341"/>
+    <path d="M448 265 V398"/>
+    <path d="M668 200 H555"/>
+    <path d="M668 250 H612 V470 H555"/>
+    <path d="M800 270 V308"/>
+    <path d="M1008 180 H960 V350 H932"/>
+  </g>
+
+  <!-- Dashed arrows: optional integrations -->
+  <g fill="none" stroke="#34495e" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)">
+    <path d="M800 390 V448"/>
+    <path d="M932 520 H1008"/>
+    <path d="M932 470 H985 V345 H1008"/>
+    <path d="M1140 392 V468"/>
+    <path d="M1140 584 V670 H448 V542"/>
+  </g>
+
+  <!-- Arrow labels -->
+  <g font-size="12" font-weight="600" fill="#34495e" text-anchor="middle">
+    <text x="295" y="206">1 · deploy</text>
+    <text x="448" y="338" font-weight="400" fill="#5b6770">manages</text>
+    <text x="612" y="192">2 · watch</text>
+    <rect x="566" y="330" width="92" height="38" rx="6" fill="#ffffff"/>
+    <text x="612" y="347">3 · scrape</text>
+    <text x="612" y="362" font-size="11" font-weight="400" fill="#5b6770">health, metrics</text>
+    <text x="792" y="294" text-anchor="end">4 · update status</text>
+    <text x="808" y="425" text-anchor="start">5 · generates</text>
+    <text x="968" y="268" text-anchor="start">6 · read / watch</text>
+    <text x="970" y="512" font-size="11" font-weight="400" fill="#5b6770">scrape cfg</text>
+    <text x="1148" y="435" text-anchor="start" font-size="11" font-weight="400" fill="#5b6770">queries</text>
+    <text x="795" y="662">7 · Prometheus scrapes /observe/metrics</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-size="12" fill="#34495e">
+    <text x="40" y="520" font-weight="700">Legend</text>
+    <path d="M40 540 H80" stroke="#34495e" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="92" y="544">Core flow</text>
+    <path d="M40 565 H80" stroke="#34495e" stroke-width="2" stroke-dasharray="6 4" fill="none" marker-end="url(#arrow)"/>
+    <text x="92" y="569">Optional (feature toggles)</text>
+    <text x="40" y="600" font-size="11" fill="#5b6770">CREATE_PROMETHEUS_POD_MONITOR</text>
+    <text x="40" y="616" font-size="11" fill="#5b6770">CREATE_GRAFANA_DASHBOARD</text>
+    <text x="40" y="632" font-size="11" fill="#5b6770">CREATE_PROMETHEUS_RULE</text>
+  </g>
+</svg>
