@@ -1,5 +1,5 @@
 ---
-title: "Camel Monitor Operator configuration"
+title: "Configuration"
 linkTitle: "Camel Monitor Operator configuration"
 weight: 30
 aliases:

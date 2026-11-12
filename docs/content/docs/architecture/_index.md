@@ -1,5 +1,5 @@
 ---
-title: "Camel Dashboard architecture"
+title: "Architecture"
 weight: 70
 ---
 
