@@ -98,7 +98,7 @@ $ kubectl set env deployment/camel-monitor-operator POLL_INTERVAL_SECONDS=30 -n 
 
 | Variable | Type | Default | Description |
 |----------|------|---------|-------------|
-| `CHECK_VERSION_UPGRADE` | boolean | disabled | Set to `true` to check if a new Camel version is available for each monitored application. All the installation procedures provide this variable set to `true`. |
+| `CHECK_VERSION_UPGRADE` | boolean | true | Set to `true` to check if a new Camel version is available for each monitored application. |
 | `CAMEL_MAIN_MAVEN_META_URL` | URL | `https://repo1.maven.org/maven2/org/apache/camel/camel-core/maven-metadata.xml` | Maven metadata used to find the latest Camel Main version. |
 | `CAMEL_QUARKUS_MAVEN_META_URL` | URL | `https://repo1.maven.org/maven2/io/quarkus/platform/quarkus-camel-bom/maven-metadata.xml` | Maven metadata used to find the latest Camel Quarkus version. |
 | `CAMEL_SPRING_BOOT_MAVEN_META_URL` | URL | `https://repo1.maven.org/maven2/org/apache/camel/springboot/camel-spring-boot-bom/maven-metadata.xml` | Maven metadata used to find the latest Camel Spring Boot version. |
