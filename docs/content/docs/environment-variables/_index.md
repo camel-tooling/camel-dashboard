@@ -110,6 +110,7 @@ $ kubectl set env deployment/camel-monitor-operator POLL_INTERVAL_SECONDS=30 -n 
 | `CLIENT_QPS` | float | `20` | Queries per second allowed by the client-side throttling of the operator Kubernetes client. |
 | `CLIENT_BURST` | int | `200` | Burst allowed by the client-side throttling of the operator Kubernetes client. |
 | `MAX_CONCURRENT_RECONCILES` | int | `1` | Maximum number of `CamelMonitor` resources reconciled concurrently. |
+| `POLLING_SHUFFLE_PERCENT` | int | `0` | Percentage to be used in order to spread the reconciliation time of applications in a cluster. Useful to avoid peak of periodic loads when the operator discovers many applications at the same time (ie, restarts or brand new installations). |
 
 > NOTE: a numeric variable which cannot be parsed is ignored and the default value is used instead.
 
